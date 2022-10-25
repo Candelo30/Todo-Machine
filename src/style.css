@@ -1,0 +1,76 @@
+:root {
+  --bg-primary: #0d47a1;
+  --P-Light: #5472d3;
+  --P-Dark: #002171;
+  --bg-Secondary: #00acc1;
+  --S-Light: #5ddef4;
+  --S-Dark: #007c91;
+  --color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+body.dark {
+  color: #fff;
+  background-color: #00051b;
+}
+
+body::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--P-Dark);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--bg-Secondary);
+}
+
+.main-box {
+  padding-top: 40px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+body.dark .main {
+  color: #fff;
+  background-color: #00051b;
+}
+
+.main {
+  transition: all 0.3s ease;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  padding-top: 30px;
+  background-color: var(--bg-Secondary);
+  transition: all 0.3s ease;
+}
+
+body.dark .wrapper {
+  background-color: var(--S-Dark);
+}
+
+@media only screen and (max-width: 955px) {
+  .wrapper {
+    display: none;
+  }
+}

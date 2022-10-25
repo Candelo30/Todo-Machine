@@ -1,0 +1,17 @@
+header {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: large;
+  background-color: var(--bg-primary);
+  color: var(--color);
+}
+
+body.dark header {
+  background-color: var(--P-Dark);
+}
