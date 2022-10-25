@@ -38,6 +38,15 @@ function App() {
       return Todotext.includes(Searchtext);
     });
   }
+
+  const CompletedTodos = (text) => {
+    const TodoIndex = todos.findIndex((todo) => todo.text == text);
+
+    const NewTodos = [...todos];
+    NewTodos[TodoIndex].completed = true;
+    setCountTodos(NewTodos);
+  };
+
   return (
     <React.Fragment>
       <Header />
@@ -58,6 +67,7 @@ function App() {
                 key={todo.text}
                 text={todo.text}
                 completed={todo.completed}
+                onComplete={() => CompletedTodos(todo.text)}
               />
             ))}
           </TodoList>
