@@ -10,8 +10,8 @@ import './style.css';
 import './normalize.css';
 
 const AllTodos = [
-  { text: 'Cortar cebolla', completed: false },
-  { text: 'Tomar el cursso de intro a React', completed: false },
+  { text: 'Cortar cebolla', completed: true },
+  { text: 'Tomar el cursso de intro a React', completed: true },
   { text: 'Llorar con la llorona', completed: true },
   { text: 'LALALALAA', completed: false },
   { text: 'Estudiar todos los días React', completed: false },
@@ -39,6 +39,7 @@ function App() {
     });
   }
 
+
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
 
@@ -51,7 +52,7 @@ function App() {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
 
     const NewTodos = [...todos];
-    NewTodos.splice(TodoIndex, 1)
+    NewTodos.splice(TodoIndex, 1);
     setCountTodos(NewTodos);
   };
 
