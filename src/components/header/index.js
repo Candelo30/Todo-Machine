@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
+// import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
+import { GiClick } from 'react-icons/Gi';
 import './header.css';
 
 function Header() {
@@ -34,6 +35,7 @@ function Header() {
             defaultChecked={checked}
           >
             Cambia de tema
+            <GiClick />
           </button>
         </nav>
       </header>

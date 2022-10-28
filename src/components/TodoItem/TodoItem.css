@@ -10,6 +10,7 @@
   border-radius: 3px;
   width: 400px;
   box-shadow: 0px 2px 10px var(--bg-Secondary);
+  transition: all 0.3s ease;
 }
 
 body.dark .TodoItem {
@@ -28,7 +29,6 @@ body.dark .TodoItems-completed {
   border: 2px solid var(--S-Dark);
   box-shadow: 0px 2px 10px var(--S-Dark);
 }
-
 
 .TodoItem-p {
   margin: 24px 0 24px 24px;

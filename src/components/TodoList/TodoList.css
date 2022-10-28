@@ -6,15 +6,10 @@ section {
 }
 
 ul {
-  background-color: #faf9f6;
   margin: 0;
   padding: 0 15px 0 0;
   list-style: none;
   overflow-y: scroll;
-}
-
-body.dark ul {
-  background-color: #00031d;
 }
 
 ul::-webkit-scrollbar {
@@ -24,4 +19,8 @@ ul::-webkit-scrollbar {
 ul::-webkit-scrollbar-thumb {
   background-color: var(--bg-Secondary);
   border-radius: 5px;
+}
+
+body.dark ul::-webkit-scrollbar-thumb {
+  background-color: var(--S-Dark);
 }

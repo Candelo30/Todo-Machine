@@ -17,6 +17,7 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
 }
 
 body.dark {
