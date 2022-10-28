@@ -15,3 +15,28 @@ header {
 body.dark header {
   background-color: var(--P-Dark);
 }
+
+.toggle-mode {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  position: relative;
+}
+.toggle-mode:before {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: rgba(241, 241, 241, 0.698);
+  transition: all 0.3s;
+}
+
+.toggle-mode:hover:before {
+  width: 100%;
+}
+
+.toggle-mode:before {
+  left: 0;
+}

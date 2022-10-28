@@ -28,11 +28,13 @@ function Header() {
       <header>
         <span>Todo Machine</span>
         <nav>
-          <BsFillMoonFill
+          <button
+            className="toggle-mode"
             onClick={toggleThemeChange}
             defaultChecked={checked}
-          />
-          <BsFillSunFill />
+          >
+            Cambia de tema
+          </button>
         </nav>
       </header>
     </>
