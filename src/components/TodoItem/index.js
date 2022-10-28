@@ -5,7 +5,6 @@ import { BsCheckLg, BsXLg } from 'react-icons/bs';
 function TodoItem(props) {
   return (
     <li
-      onClick={props.onComplete}
       className={`TodoItem ${props.completed && 'TodoItems-completed'}`}
     >
       <BsCheckLg
