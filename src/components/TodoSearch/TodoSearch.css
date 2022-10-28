@@ -1,7 +1,8 @@
 .TodoSearch {
   display: flex;
   justify-content: center;
-  width: 395px;
+  margin: 0 15px 0 0;
+  width: 400px;
   height: 64px;
   border: 3px solid var(--P-Dark);
   border-radius: 3px;

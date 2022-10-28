@@ -31,6 +31,7 @@ function App() {
   }
 
   const CompletedTodo = (text) => {
+    alert('Completaras ' + text);
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
 
     const NewTodos = [...todos];
@@ -39,6 +40,7 @@ function App() {
   };
 
   const DelatedTodo = (text) => {
+    alert('Quieres eliminar ' + text);
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
 
     const NewTodos = [...todos];
