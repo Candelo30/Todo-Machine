@@ -39,7 +39,6 @@ function App() {
     });
   }
 
-
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
 
