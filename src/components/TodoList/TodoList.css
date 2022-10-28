@@ -8,7 +8,7 @@ section {
 ul {
   background-color: #faf9f6;
   margin: 0;
-  padding: 0 10px;
+  padding: 0 15px 0 0;
   list-style: none;
   overflow-y: scroll;
 }
@@ -17,19 +17,11 @@ body.dark ul {
   background-color: #00031d;
 }
 
-ul {
-  scrollbar-width: thin; /* "auto" or "thin" */
-  scrollbar-color: var(--P-Dark) var(--bg-Primary); /* scroll thumb and track */
-}
-
 ul::-webkit-scrollbar {
-  width: 10px;
-}
-
-ul::-webkit-scrollbar-track {
-  background-color: var(--P-Dark);
+  width: 5px;
 }
 
 ul::-webkit-scrollbar-thumb {
   background-color: var(--bg-Secondary);
+  border-radius: 5px;
 }

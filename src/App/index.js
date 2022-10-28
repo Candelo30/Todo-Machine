@@ -1,14 +1,5 @@
 import React from 'react';
-import { TodoCounter } from './components/TodoCounter/';
-import { Header } from './components/header/';
-import { TodoSearch } from './components/TodoSearch/';
-import { TodoList } from './components/TodoList/';
-import { TodoItem } from './components/TodoItem/';
-import { CreateTodoButton } from './components/CreateTodoButton/';
-import { Illustrations } from './components/illustrations/illustrations.js';
-import './style.css';
-import './normalize.css';
-
+import { AppUI } from './AppUI';
 const AllTodos = [
   { text: 'Cortar cebolla', completed: true },
   { text: 'Tomar el cursso de intro a React', completed: true },
@@ -56,34 +47,15 @@ function App() {
   };
 
   return (
-    <React.Fragment>
-      <Header />
-      <div className="main-box">
-        <div className="wrapper">
-          <Illustrations />
-        </div>
-        <div className="main">
-          <TodoCounter all={countsTodos} completed={completedTodos} />
-          <TodoSearch
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-          />
-
-          <TodoList>
-            {searchedTodos.map((todo) => (
-              <TodoItem
-                key={todo.text}
-                text={todo.text}
-                completed={todo.completed}
-                onComplete={() => CompletedTodo(todo.text)}
-                onDelete={() => DelatedTodo(todo.text)}
-              />
-            ))}
-          </TodoList>
-        </div>
-      </div>
-      <CreateTodoButton />
-    </React.Fragment>
+    <AppUI
+      countsTodos={countsTodos}
+      completedTodos={completedTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      CompletedTodo={CompletedTodo}
+      DelatedTodo={DelatedTodo}
+    />
   );
 }
 
