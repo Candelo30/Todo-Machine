@@ -10,6 +10,7 @@ header {
   font-size: large;
   background-color: var(--bg-primary);
   color: var(--color);
+  transition: 0.3s ease-out;
 }
 
 body.dark header {
@@ -32,7 +33,7 @@ body.dark header {
   width: 0;
   height: 3px;
   background-color: rgba(241, 241, 241, 0.698);
-  transition: all 0.3s;
+  transition: all 0.3s ease-out;
 }
 
 .toggle-mode:hover:before {
