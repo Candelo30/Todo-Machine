@@ -32,7 +32,9 @@ function App() {
 
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
-    const msgcompleted = confirm('Deseas completar o completar ' + text + '?');
+    const msgcompleted = confirm(
+      'Deseas completar o descompletar ' + text + '?'
+    );
     const NewTodos = [...todos];
 
     if (msgcompleted) {
