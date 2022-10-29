@@ -31,20 +31,32 @@ function App() {
   }
 
   const CompletedTodo = (text) => {
-    alert('Completaras ' + text);
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
-
+    const msgcompleted = confirm('¿Deseas completar ' + text + '?');
     const NewTodos = [...todos];
-    NewTodos[TodoIndex].completed = true;
+
+    if (msgcompleted) {
+      alert('¡Gracias por confirmar!');
+      NewTodos[TodoIndex].completed = true;
+    } else {
+      alert('¡Haz denegado el mensaje!');
+      NewTodos[TodoIndex].completed = false;
+    }
     setCountTodos(NewTodos);
   };
 
   const DelatedTodo = (text) => {
-    alert('Quieres eliminar ' + text);
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
-
+    const msgdelate = confirm('¿Deseas eliminar ' + text + '?');
     const NewTodos = [...todos];
-    NewTodos.splice(TodoIndex, 1);
+
+    if (msgdelate) {
+      alert('¡Gracias por confirmar!');
+      NewTodos.splice(TodoIndex, 1);
+    } else {
+      alert('¡Haz denegado el mensaje!');
+      NewTodos[TodoIndex];
+    }
     setCountTodos(NewTodos);
   };
 
