@@ -2,3 +2,7 @@
   width: 100vw;
   height: 90px;
 }
+
+body.dark .wrapper-color {
+  fill: #00051b;
+}
