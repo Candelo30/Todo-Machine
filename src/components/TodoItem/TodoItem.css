@@ -34,7 +34,7 @@ body.dark .TodoItems-completed {
 .TodoItem-p {
   margin: 24px 0 24px 24px;
   width: calc(100% - 120px);
-  font-size: clamp(1.7vw, 24px, 18px);
+  font-size: clamp(1.596vw, 24px, 18px);
   line-height: 24px;
   font-weight: 400;
 }

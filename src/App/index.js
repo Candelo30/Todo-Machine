@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppUI } from './AppUI';
+
 const AllTodos = [
   { text: 'Cortar cebolla', completed: true },
   { text: 'Tomar el cursso de intro a React', completed: true },
