@@ -7,8 +7,8 @@ import { TodoItem } from '../components/TodoItem/';
 import { CreateTodoButton } from '../components/CreateTodoButton/';
 import { Illustrations } from '../components/illustrations/illustrations.js';
 
-import './style.css';
 import './normalize.css';
+import './style.css';
 
 function AppUI({
   countsTodos,
