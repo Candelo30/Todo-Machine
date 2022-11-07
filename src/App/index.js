@@ -41,10 +41,10 @@ function App() {
     });
   }
 
-  const saveTodos = (AllTodosNew) => {
-    const stringifyTodos = JSON.stringify(AllTodosNew);
+  const saveTodos = (NewTodos) => {
+    const stringifyTodos = JSON.stringify(NewTodos);
     localStorage.setItem('TODO_V1', stringifyTodos);
-    setCountTodos(saveTodos);
+    setCountTodos(NewTodos);
   };
 
   const CompletedTodo = (text) => {
