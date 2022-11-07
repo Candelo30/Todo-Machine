@@ -30,7 +30,7 @@ function useLocalstorage(itemName, itemvalue) {
     setCountTodos(NewTodos);
   };
 
-  return [todos, setCountTodos];
+  return [todos, saveTodos];
 }
 
 function App() {
