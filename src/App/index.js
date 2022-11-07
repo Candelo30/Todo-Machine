@@ -44,7 +44,7 @@ function App() {
   const saveTodos = (NewTodos) => {
     const stringifyTodos = JSON.stringify(NewTodos);
     localStorage.setItem('TODO_V1', stringifyTodos);
-    setCountTodos(NewTodos);
+    setCountTodos(NewTodos)
   };
 
   const CompletedTodo = (text) => {
