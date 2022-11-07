@@ -11,8 +11,7 @@ import { AppUI } from './AppUI';
 //   { text: 'Saludar a todos', completed: false },
 // ];
 
-function useLocalstorage (itemName, itemvalue){
-
+function useLocalstorage(itemName, itemvalue) {
   const localstorageTodos = localStorage.getItem(itemName);
   let parseTodo;
 
@@ -21,22 +20,21 @@ function useLocalstorage (itemName, itemvalue){
     parseTodo = itemvalue;
   } else {
     parseTodo = JSON.parse(localstorageTodos);
-  }  
+  }
 
   const [todos, setCountTodos] = React.useState(parseTodo);
 
   const saveTodos = (NewTodos) => {
     const stringifyTodos = JSON.stringify(NewTodos);
     localStorage.setItem(itemName, stringifyTodos);
-    setCountTodos(NewTodos)
+    setCountTodos(NewTodos);
   };
 
-  return [];
+  return [todos, setCountTodos];
 }
 
 function App() {
-
-  const [todos, saveTodos] = useLocalstorage('TODO_V1', [])
+  const [todos, saveTodos] = useLocalstorage('TODO_V1', []);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const countsTodos = todos.length;
