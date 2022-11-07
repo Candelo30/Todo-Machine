@@ -1,18 +1,28 @@
 import React from 'react';
 import { AppUI } from './AppUI';
 
-const AllTodos = [
-  { text: 'Cortar cebolla', completed: true },
-  { text: 'Tomar el cursso de intro a React', completed: true },
-  { text: 'Llorar con la llorona', completed: true },
-  { text: 'LALALALAA', completed: false },
-  { text: 'Estudiar todos los días React', completed: false },
-  { text: 'Aprender todos los días algo nuevo', completed: true },
-  { text: 'Saludar a todos', completed: false },
-];
+// const AllTodos = [
+//   { text: 'Cortar cebolla', completed: true },
+//   { text: 'Tomar el cursso de intro a React', completed: true },
+//   { text: 'Llorar con la llorona', completed: true },
+//   { text: 'LALALALAA', completed: false },
+//   { text: 'Estudiar todos los días React', completed: false },
+//   { text: 'Aprender todos los días algo nuevo', completed: true },
+//   { text: 'Saludar a todos', completed: false },
+// ];
 
 function App() {
-  const [todos, setCountTodos] = React.useState(AllTodos);
+  const localstorageTodos = localStorage.getItem('TODO_V1');
+  let parseTodo;
+
+  if (!localstorageTodos) {
+    localStorage.setItem('TODO_V1', JSON.stringify([]));
+    parseTodo = [];
+  } else {
+    parseTodo = JSON.parse(localstorageTodos);
+  }
+
+  const [todos, setCountTodos] = React.useState(parseTodo);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const countsTodos = todos.length;
