@@ -27,7 +27,7 @@ function Header() {
   return (
     <>
       <header>
-        <span>Todo Machine</span>
+        <span className="hader-logo">Todo Machine</span>
         <nav>
           <button
             className="toggle-mode"

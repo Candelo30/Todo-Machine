@@ -1,15 +1,15 @@
 import React from 'react';
 import { AppUI } from './AppUI';
 
-// const AllTodos = [
-//   { text: 'Cortar cebolla', completed: true },
-//   { text: 'Tomar el cursso de intro a React', completed: true },
-//   { text: 'Llorar con la llorona', completed: true },
-//   { text: 'LALALALAA', completed: false },
-//   { text: 'Estudiar todos los días React', completed: false },
-//   { text: 'Aprender todos los días algo nuevo', completed: true },
-//   { text: 'Saludar a todos', completed: false },
-// ];
+const AllTodos = [
+  { text: 'Cortar cebolla', completed: true },
+  { text: 'Tomar el cursso de intro a React', completed: true },
+  { text: 'Llorar con la llorona', completed: true },
+  { text: 'LALALALAA', completed: false },
+  { text: 'Estudiar todos los días React', completed: false },
+  { text: 'Aprender todos los días algo nuevo', completed: true },
+  { text: 'Saludar a todos', completed: false },
+];
 
 function App() {
   const localstorageTodos = localStorage.getItem('TODO_V1');
@@ -41,6 +41,12 @@ function App() {
     });
   }
 
+  const saveTodos = (AllTodosNew) => {
+    const stringifyTodos = JSON.stringify(AllTodosNew);
+    localStorage.setItem('TODO_V1', stringifyTodos);
+    setCountTodos(saveTodos);
+  };
+
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const msgcompleted = confirm(
@@ -55,7 +61,7 @@ function App() {
       alert('¡Haz denegado el mensaje!');
       NewTodos[TodoIndex].completed = false;
     }
-    setCountTodos(NewTodos);
+    saveTodos(NewTodos);
   };
 
   const DelatedTodo = (text) => {
@@ -70,7 +76,7 @@ function App() {
       alert('¡Haz denegado el mensaje!');
       NewTodos[TodoIndex];
     }
-    setCountTodos(NewTodos);
+    saveTodos(NewTodos);
   };
 
   return (

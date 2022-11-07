@@ -1,3 +1,4 @@
 .TodoCounter {
+  cursor: default;
   font-size: clamp(2vw, 32px, 20px);
 }

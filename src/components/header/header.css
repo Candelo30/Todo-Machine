@@ -13,6 +13,10 @@ header {
   transition: 0.3s ease-out;
 }
 
+.hader-logo {
+  cursor: default;
+}
+
 body.dark header {
   background-color: var(--P-Dark);
 }
