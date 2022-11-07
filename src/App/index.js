@@ -1,28 +1,42 @@
 import React from 'react';
 import { AppUI } from './AppUI';
 
-const AllTodos = [
-  { text: 'Cortar cebolla', completed: true },
-  { text: 'Tomar el cursso de intro a React', completed: true },
-  { text: 'Llorar con la llorona', completed: true },
-  { text: 'LALALALAA', completed: false },
-  { text: 'Estudiar todos los días React', completed: false },
-  { text: 'Aprender todos los días algo nuevo', completed: true },
-  { text: 'Saludar a todos', completed: false },
-];
+// const AllTodos = [
+//   { text: 'Cortar cebolla', completed: true },
+//   { text: 'Tomar el cursso de intro a React', completed: true },
+//   { text: 'Llorar con la llorona', completed: true },
+//   { text: 'LALALALAA', completed: false },
+//   { text: 'Estudiar todos los días React', completed: false },
+//   { text: 'Aprender todos los días algo nuevo', completed: true },
+//   { text: 'Saludar a todos', completed: false },
+// ];
 
-function App() {
-  const localstorageTodos = localStorage.getItem('TODO_V1');
+function useLocalstorage (itemName, itemvalue){
+
+  const localstorageTodos = localStorage.getItem(itemName);
   let parseTodo;
 
   if (!localstorageTodos) {
-    localStorage.setItem('TODO_V1', JSON.stringify([]));
-    parseTodo = [];
+    localStorage.setItem(itemName, JSON.stringify(itemvalue));
+    parseTodo = itemvalue;
   } else {
     parseTodo = JSON.parse(localstorageTodos);
-  }
+  }  
 
   const [todos, setCountTodos] = React.useState(parseTodo);
+
+  const saveTodos = (NewTodos) => {
+    const stringifyTodos = JSON.stringify(NewTodos);
+    localStorage.setItem(itemName, stringifyTodos);
+    setCountTodos(NewTodos)
+  };
+
+  return [];
+}
+
+function App() {
+
+  const [todos, saveTodos] = useLocalstorage('TODO_V1', [])
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const countsTodos = todos.length;
@@ -40,12 +54,6 @@ function App() {
       return Todotext.includes(Searchtext);
     });
   }
-
-  const saveTodos = (NewTodos) => {
-    const stringifyTodos = JSON.stringify(NewTodos);
-    localStorage.setItem('TODO_V1', stringifyTodos);
-    setCountTodos(NewTodos)
-  };
 
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
