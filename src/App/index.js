@@ -33,7 +33,7 @@ function useLocalstorage(itemName, itemvalue) {
         setError(error);
       }
     }, 10000);
-  });
+  }[]);
 
   const saveTodos = (NewTodos) => {
     try {
