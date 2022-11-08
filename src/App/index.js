@@ -13,34 +13,43 @@ import { AppUI } from './AppUI';
 
 function useLocalstorage(itemName, itemvalue) {
   const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
   const [todos, setCountTodos] = React.useState(itemvalue);
   React.useEffect(() => {
     setTimeout(() => {
-      const localstorageTodos = localStorage.getItem(itemName);
-      let parseTodo;
+      try {
+        const localstorageTodos = localStorage.getItem(itemName);
+        let parseTodo;
 
-      if (!localstorageTodos) {
-        localStorage.setItem(itemName, JSON.stringify(itemvalue));
-        parseTodo = itemvalue;
-      } else {
-        parseTodo = JSON.parse(localstorageTodos);
+        if (!localstorageTodos) {
+          localStorage.setItem(itemName, JSON.stringify(itemvalue));
+          parseTodo = itemvalue;
+        } else {
+          parseTodo = JSON.parse(localstorageTodos);
+        }
+        setCountTodos(parseTodo);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
       }
-      setCountTodos(parseTodo);
-      setLoading(false);
     }, 10000);
   });
 
   const saveTodos = (NewTodos) => {
-    const stringifyTodos = JSON.stringify(NewTodos);
-    localStorage.setItem(itemName, stringifyTodos);
-    setCountTodos(NewTodos);
+    try {
+      const stringifyTodos = JSON.stringify(NewTodos);
+      localStorage.setItem(itemName, stringifyTodos);
+      setCountTodos(NewTodos);
+    } catch (error) {
+      setError(error);
+    }
   };
 
-  return { todos, saveTodos, loading };
+  return { todos, saveTodos, loading, error };
 }
 
 function App() {
-  const { todos, saveTodos, loading } = useLocalstorage('TODO_V1', []);
+  const { todos, saveTodos, loading, error } = useLocalstorage('TODO_V1', []);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const countsTodos = todos.length;
