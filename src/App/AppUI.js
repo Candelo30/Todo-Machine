@@ -42,10 +42,14 @@ function AppUI({
               </p>
             )}
             {loading && (
-              <p className="loading">
-                Estamos cargando espera un momento por favor
-              </p>
+              <div className="loading">
+                <div class="loader"></div>
+                <p className="loader-text">
+                  Estamos cargando espera un momento por favor
+                </p>
+              </div>
             )}
+
             {!loading && !searchedTodos.length && <p>¡Crea tu primer tarea!</p>}
             {searchedTodos.map((todo) => (
               <TodoItem

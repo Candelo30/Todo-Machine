@@ -89,8 +89,31 @@ body.dark .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background-color: #fff;
   color: #333;
+}
+
+.loader {
+  position: absolute;
+  top: 36%;
+  text-align: center;
+  transform: translate(-50%, 50%);
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid var(--bg-primary);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 body.dark .loading {
