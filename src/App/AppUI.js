@@ -11,6 +11,8 @@ import './normalize.css';
 import './style.css';
 
 function AppUI({
+  loading,
+  error,
   countsTodos,
   completedTodos,
   searchValue,
@@ -34,6 +36,17 @@ function AppUI({
           />
 
           <TodoList>
+            {error && (
+              <p className="loading">
+                Hubo un error al cargar la aplicación web
+              </p>
+            )}
+            {loading && (
+              <p className="loading">
+                Estamos cargando espera un momento por favor
+              </p>
+            )}
+            {!loading && !searchedTodos.length && <p>¡Crea tu primer tarea!</p>}
             {searchedTodos.map((todo) => (
               <TodoItem
                 key={todo.text}

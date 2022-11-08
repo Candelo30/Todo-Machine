@@ -78,3 +78,22 @@ body.dark .wrapper {
     display: none;
   }
 }
+
+.loading {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: #333;
+}
+
+body.dark .loading {
+  background-color: #00051b;
+  color: #fff;
+}

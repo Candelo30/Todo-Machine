@@ -12,17 +12,23 @@ import { AppUI } from './AppUI';
 // ];
 
 function useLocalstorage(itemName, itemvalue) {
-  const localstorageTodos = localStorage.getItem(itemName);
-  let parseTodo;
+  const [loading, setLoading] = React.useState(true);
+  const [todos, setCountTodos] = React.useState(itemvalue);
+  React.useEffect(() => {
+    setTimeout(() => {
+      const localstorageTodos = localStorage.getItem(itemName);
+      let parseTodo;
 
-  if (!localstorageTodos) {
-    localStorage.setItem(itemName, JSON.stringify(itemvalue));
-    parseTodo = itemvalue;
-  } else {
-    parseTodo = JSON.parse(localstorageTodos);
-  }
-
-  const [todos, setCountTodos] = React.useState(parseTodo);
+      if (!localstorageTodos) {
+        localStorage.setItem(itemName, JSON.stringify(itemvalue));
+        parseTodo = itemvalue;
+      } else {
+        parseTodo = JSON.parse(localstorageTodos);
+      }
+      setCountTodos(parseTodo);
+      setLoading(false);
+    }, 10000);
+  });
 
   const saveTodos = (NewTodos) => {
     const stringifyTodos = JSON.stringify(NewTodos);
@@ -30,11 +36,11 @@ function useLocalstorage(itemName, itemvalue) {
     setCountTodos(NewTodos);
   };
 
-  return [todos, saveTodos];
+  return { todos, saveTodos, loading };
 }
 
 function App() {
-  const [todos, saveTodos] = useLocalstorage('TODO_V1', []);
+  const { todos, saveTodos, loading } = useLocalstorage('TODO_V1', []);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const countsTodos = todos.length;
@@ -87,6 +93,7 @@ function App() {
 
   return (
     <AppUI
+      loading={loading}
       countsTodos={countsTodos}
       completedTodos={completedTodos}
       searchValue={searchValue}
