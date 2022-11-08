@@ -45,7 +45,7 @@ function AppUI({
               <div className="loading">
                 <div class="loader"></div>
                 <p className="loader-text">
-                  Estamos cargando espera un momento por favor
+                  Estamos cargando todo, espera un momento ¡por favor!
                 </p>
               </div>
             )}
