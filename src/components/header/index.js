@@ -11,7 +11,7 @@ function Header() {
   useEffect(() => {
     document
       .getElementsByTagName('body')[0]
-      .setAttribute('class', localStorage.getItem('theme'));
+      .setAttribute('className', localStorage.getItem('theme'));
   }, [checked]);
 
   const toggleThemeChange = () => {
