@@ -103,6 +103,7 @@ function App() {
   return (
     <AppUI
       loading={loading}
+      error={error}
       countsTodos={countsTodos}
       completedTodos={completedTodos}
       searchValue={searchValue}
