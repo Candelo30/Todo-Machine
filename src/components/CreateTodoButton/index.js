@@ -9,7 +9,7 @@ function CreateTodoButton(props) {
 
   return (
     <button
-      title="añadir tarea"
+      title="Añadir tarea"
       className="CreateTodoButton"
       onClick={() => onClickButton('Aquí se debería abrir el modal')}
     >
