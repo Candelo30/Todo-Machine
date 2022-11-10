@@ -5,11 +5,16 @@ header {
   left: 0;
   padding: 15px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   font-size: large;
   background-color: var(--bg-primary);
   color: var(--color);
+  -webkit-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
 
@@ -37,6 +42,8 @@ body.dark header {
   width: 0;
   height: 3px;
   background-color: rgba(241, 241, 241, 0.698);
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 

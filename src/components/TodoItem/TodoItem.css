@@ -1,8 +1,14 @@
 .TodoItem {
   background-color: #fafafa;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-top: 24px;
   border: 2px solid var(--bg-Secondary);
@@ -10,17 +16,22 @@
   width: 90%;
   max-width: 450px;
   min-width: 350px;
+  -webkit-box-shadow: 0px 2px 10px var(--bg-Secondary);
   box-shadow: 0px 2px 10px var(--bg-Secondary);
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
 body.dark .TodoItem {
   background-color: #181616;
   border: 2px solid var(--S-Light);
+  -webkit-box-shadow: 0px 2px 10px var(--S-Light);
   box-shadow: 0px 2px 10px var(--S-Light);
 }
 
 .TodoItems-completed {
+  -webkit-box-shadow: 0px 2px 10px var(--P-Dark);
   box-shadow: 0px 2px 10px var(--P-Dark);
   border: 2px solid var(--P-Dark);
 }
@@ -28,6 +39,7 @@ body.dark .TodoItem {
 body.dark .TodoItems-completed {
   background-color: #181616;
   border: 2px solid var(--S-Dark);
+  -webkit-box-shadow: 0px 2px 10px var(--S-Dark);
   box-shadow: 0px 2px 10px var(--S-Dark);
 }
 
@@ -44,8 +56,14 @@ body.dark .TodoItems-completed {
 
 .Icon {
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 20px;
   font-size: 24px;

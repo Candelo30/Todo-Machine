@@ -1,5 +1,6 @@
 .CreateTodoButton {
   background-color: var(--bg-Secondary);
+  -webkit-box-shadow: 0px 5px 25px var(--bg-Secondary);
   box-shadow: 0px 5px 25px var(--bg-Secondary);
   border: none;
   border-radius: 50%;
@@ -10,21 +11,36 @@
   right: 24px;
   font-weight: bold;
   color: var(--color);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 64px;
   width: 64px;
 
+  -webkit-transform: rotate(0);
+
+  -ms-transform: rotate(0);
+
   transform: rotate(0);
+  -webkit-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
 
 .CreateTodoButton:hover {
+  -webkit-transform: rotate(224deg);
+  -ms-transform: rotate(224deg);
   transform: rotate(224deg);
 }
 
 body.dark .CreateTodoButton {
   background-color: var(--S-Dark);
+  -webkit-box-shadow: 0px 5px 25px var(--S-Dark);
   box-shadow: 0px 5px 25px var(--S-Dark);
 }
