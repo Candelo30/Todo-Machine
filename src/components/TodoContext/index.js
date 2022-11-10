@@ -5,7 +5,7 @@ const TodoContext = React.createContext(); // CreateContext es una herramienta d
 
 // Para compartir el estado de Provaider a Consumer creamos un puente
 
-function TodoProvaider(props) {
+function TodoProvider(props) {
   const { todos, saveTodos, loading, error } = useLocalstorage('TODO_V1', []);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
@@ -57,7 +57,7 @@ function TodoProvaider(props) {
     saveTodos(NewTodos);
   };
   return (
-    <TodoContext.Provaider
+    <TodoContext.Provider
       value={{
         loading,
         error,
@@ -71,8 +71,8 @@ function TodoProvaider(props) {
       }}
     >
       {props.children}
-    </TodoContext.Provaider>
+    </TodoContext.Provider>
   );
 }
 
-export { TodoProvaider, TodoContext };
+export { TodoProvider, TodoContext };
