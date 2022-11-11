@@ -7,6 +7,7 @@ import { TodoList } from '../components/TodoList/';
 import { TodoItem } from '../components/TodoItem/';
 import { CreateTodoButton } from '../components/CreateTodoButton/';
 import { Illustrations } from '../components/illustrations/illustrations.js';
+import { Modal } from '../Portal/';
 
 import './normalize.css';
 import './style.css';
@@ -53,6 +54,9 @@ function AppUI() {
           </TodoList>
         </div>
       </div>
+      <Modal>
+        <p>Hola</p>
+      </Modal>
       <CreateTodoButton />
     </React.Fragment>
   );
