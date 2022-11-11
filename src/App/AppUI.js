@@ -8,13 +8,21 @@ import { TodoItem } from '../components/TodoItem/';
 import { CreateTodoButton } from '../components/CreateTodoButton/';
 import { Illustrations } from '../components/illustrations/illustrations.js';
 import { Modal } from '../Portal/';
+import { TodoForm } from "../components/TodoForm/";
 
 import './normalize.css';
 import './style.css';
 
 function AppUI() {
-  const { error, loading, searchedTodos, CompletedTodo, DelatedTodo } =
-    React.useContext(TodoContext);
+  const {
+    error,
+    loading,
+    searchedTodos,
+    CompletedTodo,
+    DelatedTodo,
+    openModal,
+    setOpenModal,
+  } = React.useContext(TodoContext);
   return (
     <React.Fragment>
       <Header />
@@ -54,10 +62,12 @@ function AppUI() {
           </TodoList>
         </div>
       </div>
-      <Modal>
-        <p>Hola</p>
-      </Modal>
-      <CreateTodoButton />
+      {!!openModal && (
+        <Modal>
+          <TodoForm />
+        </Modal>
+      )}
+      <CreateTodoButton setOpenModal={setOpenModal} />
     </React.Fragment>
   );
 }

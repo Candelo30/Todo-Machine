@@ -6,6 +6,7 @@ const TodoContext = React.createContext(); // CreateContext es una herramienta d
 // Para compartir el estado de Provaider a Consumer creamos un puente
 
 function TodoProvider(props) {
+  const [openModal, setOpenModal] = React.useState(false);
   const { todos, saveTodos, loading, error } = useLocalstorage('TODO_V1', []);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
@@ -24,6 +25,17 @@ function TodoProvider(props) {
       return Todotext.includes(Searchtext);
     });
   }
+
+    // Función para añadir un nuevo TODO
+    const addTodo = (text) => {
+      const newTodos = [...todos];
+      newTodos.push({
+        completed: false,
+        text,
+      });
+      saveTodos(newTodos);
+    };
+  
 
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
@@ -66,8 +78,11 @@ function TodoProvider(props) {
         searchValue,
         setSearchValue,
         searchedTodos,
+        addTodo,
         CompletedTodo,
         DelatedTodo,
+        openModal,
+        setOpenModal,
       }}
     >
       {props.children}

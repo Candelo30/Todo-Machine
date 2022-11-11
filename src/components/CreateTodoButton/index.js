@@ -3,15 +3,15 @@ import Button from 'react-bootstrap/Button';
 import './CreateTodoButton.css';
 
 function CreateTodoButton(props) {
-  const onClickButton = (msg) => {
-    alert(msg);
+  const onClickButton = () => {
+    props.setOpenModal(prevState => !prevState);
   };
 
   return (
     <button
       title="Añadir tarea"
       className="CreateTodoButton"
-      onClick={() => onClickButton('Aquí se debería abrir el modal')}
+      onClick={() => onClickButton()}
     >
       +
     </button>
