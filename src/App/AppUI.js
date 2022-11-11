@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext/';
+import { TodoContext } from '../components/TodoContext/';
 import { TodoCounter } from '../components/TodoCounter/';
 import { Header } from '../components/header/';
 import { TodoSearch } from '../components/TodoSearch/';
@@ -20,10 +20,8 @@ function AppUI() {
           <Illustrations />
         </div>
         <div className="main">
-          <TodoCounter all={countsTodos} completed={completedTodos} />
+          <TodoCounter />
           <TodoSearch
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
           />
 
           <TodoContext.Consumer>
