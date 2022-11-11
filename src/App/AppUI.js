@@ -12,6 +12,8 @@ import './normalize.css';
 import './style.css';
 
 function AppUI() {
+  const { error, loading, searchedTodos, CompletedTodo, DelatedTodo } =
+    React.useContext(TodoContext);
   return (
     <React.Fragment>
       <Header />
@@ -21,47 +23,34 @@ function AppUI() {
         </div>
         <div className="main">
           <TodoCounter />
-          <TodoSearch
-          />
+          <TodoSearch />
 
-          <TodoContext.Consumer>
-            {({
-              error,
-              loading,
-              searchedTodos,
-              CompletedTodo,
-              DelatedTodo,
-            }) => (
-              <TodoList>
-                {error && (
-                  <p className="loading">
-                    Hubo un error al cargar la aplicación web
-                  </p>
-                )}
-                {loading && (
-                  <div className="loading">
-                    <div class="loader"></div>
-                    <p className="loader-text">
-                      Estamos cargando todo, espera un momento ¡por favor!
-                    </p>
-                  </div>
-                )}
-
-                {!loading && !searchedTodos.length && (
-                  <p>¡Crea tu primer tarea!</p>
-                )}
-                {searchedTodos.map((todo) => (
-                  <TodoItem
-                    key={todo.text}
-                    text={todo.text}
-                    completed={todo.completed}
-                    onComplete={() => CompletedTodo(todo.text)}
-                    onDelete={() => DelatedTodo(todo.text)}
-                  />
-                ))}
-              </TodoList>
+          <TodoList>
+            {error && (
+              <p className="loading">
+                Hubo un error al cargar la aplicación web
+              </p>
             )}
-          </TodoContext.Consumer>
+            {loading && (
+              <div className="loading">
+                <div class="loader"></div>
+                <p className="loader-text">
+                  Estamos cargando todo, espera un momento ¡por favor!
+                </p>
+              </div>
+            )}
+
+            {!loading && !searchedTodos.length && <p>¡Crea tu primer tarea!</p>}
+            {searchedTodos.map((todo) => (
+              <TodoItem
+                key={todo.text}
+                text={todo.text}
+                completed={todo.completed}
+                onComplete={() => CompletedTodo(todo.text)}
+                onDelete={() => DelatedTodo(todo.text)}
+              />
+            ))}
+          </TodoList>
         </div>
       </div>
       <CreateTodoButton />
