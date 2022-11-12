@@ -35,11 +35,11 @@ function TodoForm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <label>Escribe tu nuevo TODO</label>
+      <label>¿Qué tarea quieres Realizar?</label>
       <textarea
         value={newTodoValue}
         onChange={onChange}
-        placeholder="Cortar la cebolla para el almuerzo"
+        placeholder="Ej: Salir a caminar"
       />
       <div className="TodoForm-buttonContainer">
         <button
