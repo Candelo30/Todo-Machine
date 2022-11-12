@@ -49,7 +49,7 @@ function AppUI() {
               </div>
             )}
 
-            {!loading && !searchedTodos.length && <p>¡Crea tu primer tarea!</p>}
+            {!loading && !searchedTodos.length && <p className="create">¡Crea tu primer tarea! presionando el icono <span className="listButton">+</span></p>}
             {searchedTodos.map((todo) => (
               <TodoItem
                 key={todo.text}
