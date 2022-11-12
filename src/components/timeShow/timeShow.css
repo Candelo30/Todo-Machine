@@ -1,7 +1,7 @@
 .tick {
   display: flex;
   position: absolute;
-  bottom: 34px;
+  bottom: 24px;
   left: 34px;
   text-align: center;
 }
