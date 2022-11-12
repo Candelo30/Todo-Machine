@@ -6,21 +6,18 @@ function TodoForm() {
   // Creamos un estado para nuestro nuevo TODO
   const [newTodoValue, setNewTodoValue] = React.useState('');
   // Desestructuramos las funciones que necesitamos para añadir un TODO y cerrar nuestro modal
-  const {
-    addTodo,
-    setOpenModal,
-  } = React.useContext(TodoContext);
-  
+  const { addTodo, setOpenModal } = React.useContext(TodoContext);
+
   // Creamos una función para actualizar el estado de nuestro nuevo TODO
   const onChange = (event) => {
     setNewTodoValue(event.target.value);
   };
-  
+
   // Función para cerrar el modal
   const onCancel = () => {
     setOpenModal(false);
   };
-  
+
   // Función para agregar nuestro nuevo TODO
   const onSubmit = (event) => {
     // prevent default para evitar recargar la página
@@ -30,13 +27,14 @@ function TodoForm() {
     // Cerramos nustro modal
     setOpenModal(false);
     // También estaría bien resetear nuestro formulario
-    setNewTodoValue('')
+    setNewTodoValue('');
   };
 
   return (
     <form onSubmit={onSubmit}>
       <label>¿Qué tarea quieres Realizar?</label>
       <textarea
+        required
         value={newTodoValue}
         onChange={onChange}
         placeholder="Ej: Salir a caminar"
@@ -46,13 +44,10 @@ function TodoForm() {
           type="button"
           className="TodoForm-button TodoForm-button--cancel"
           onClick={onCancel}
-          >
+        >
           Cancelar
         </button>
-        <button
-          type="submit"
-          className="TodoForm-button TodoForm-button--add"
-        >
+        <button type="submit" className="TodoForm-button TodoForm-button--add">
           Añadir
         </button>
       </div>
