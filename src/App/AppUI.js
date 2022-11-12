@@ -9,7 +9,7 @@ import { CreateTodoButton } from '../components/CreateTodoButton/';
 import { Tick } from '../components/timeShow/';
 import { Illustrations } from '../components/illustrations/illustrations.js';
 import { Modal } from '../Portal/';
-import { TodoForm } from "../components/TodoForm/";
+import { TodoForm } from '../components/TodoForm/';
 
 import './normalize.css';
 import './style.css';
@@ -24,6 +24,9 @@ function AppUI() {
     openModal,
     setOpenModal,
   } = React.useContext(TodoContext);
+  const onClickButton = () => {
+    props.setOpenModal((prevState) => !prevState);
+  };
   return (
     <React.Fragment>
       <Header />
@@ -50,7 +53,12 @@ function AppUI() {
               </div>
             )}
 
-            {!loading && !searchedTodos.length && <p className="create">¡Crea tu primer tarea! presionando el icono <span className="listButton">+</span></p>}
+            {!loading && !searchedTodos.length && (
+              <p className="create">
+                ¡Crea tu primer tarea! presionando el icono{' '}
+                <span onClick={ onClickButton } className="listButton">+</span>
+              </p>
+            )}
             {searchedTodos.map((todo) => (
               <TodoItem
                 key={todo.text}
@@ -69,7 +77,7 @@ function AppUI() {
         </Modal>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
-      <Tick date={new Date()}/>
+      <Tick date={new Date()} />
     </React.Fragment>
   );
 }
