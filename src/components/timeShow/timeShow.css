@@ -3,6 +3,7 @@
   position: absolute;
   bottom: 5px;
   left: 5px;
+  text-align: center;
 }
 
 .tick-icon__clock {
