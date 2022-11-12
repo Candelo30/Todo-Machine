@@ -6,5 +6,7 @@
 }
 
 .tick-icon__clock {
+  color: black;
+  font-size: 2em;
   margin-right: 5px;
 }

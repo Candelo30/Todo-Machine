@@ -69,7 +69,7 @@ function AppUI() {
         </Modal>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
-      <Tick />
+      <Tick date={new Date()}/>
     </React.Fragment>
   );
 }
