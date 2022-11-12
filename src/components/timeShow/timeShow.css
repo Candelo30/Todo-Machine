@@ -1,0 +1,10 @@
+.tick {
+  display: flex;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+.tick-icon__clock {
+  margin-right: 5px;
+}

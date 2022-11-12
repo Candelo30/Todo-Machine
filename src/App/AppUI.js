@@ -6,6 +6,7 @@ import { TodoSearch } from '../components/TodoSearch/';
 import { TodoList } from '../components/TodoList/';
 import { TodoItem } from '../components/TodoItem/';
 import { CreateTodoButton } from '../components/CreateTodoButton/';
+import { Tick } from '../components/timeShow/';
 import { Illustrations } from '../components/illustrations/illustrations.js';
 import { Modal } from '../Portal/';
 import { TodoForm } from "../components/TodoForm/";
@@ -68,6 +69,7 @@ function AppUI() {
         </Modal>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
+      <Tick />
     </React.Fragment>
   );
 }
