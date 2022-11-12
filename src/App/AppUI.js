@@ -69,6 +69,7 @@ function AppUI() {
               />
             ))}
           </TodoList>
+          <Tick />
         </div>
       </div>
       {!!openModal && (
@@ -77,7 +78,7 @@ function AppUI() {
         </Modal>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
-      <Tick date={new Date()} />
+      
     </React.Fragment>
   );
 }
