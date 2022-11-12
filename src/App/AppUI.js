@@ -25,7 +25,7 @@ function AppUI() {
     setOpenModal,
   } = React.useContext(TodoContext);
   const onClickButton = () => {
-    props.setOpenModal((prevState) => !prevState);
+    setOpenModal((prevState) => !prevState);
   };
   return (
     <React.Fragment>
