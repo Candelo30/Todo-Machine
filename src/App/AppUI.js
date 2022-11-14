@@ -46,7 +46,7 @@ function AppUI() {
             )}
             {loading && (
               <div className="loading">
-                <div class="loader"></div>
+                <div className="loader"></div>
                 <p className="loader-text">
                   Estamos cargando todo, espera un momento ¡por favor!
                 </p>
