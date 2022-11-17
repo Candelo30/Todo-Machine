@@ -7,14 +7,23 @@ header {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
   -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
   justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: large;
   background-color: var(--bg-primary);
   color: var(--color);
   -webkit-transition: 0.3s ease-out;
   -o-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
 
@@ -26,31 +35,42 @@ body.dark header {
   background-color: var(--P-Dark);
 }
 
-.toggle-mode {
+.mode {
+  font-size: 1.5em;
   cursor: pointer;
-  text-align: center;
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  position: relative;
-}
-.toggle-mode:before {
-  position: absolute;
-  bottom: 0;
-  content: '';
-  display: block;
-  width: 0;
-  height: 3px;
-  background-color: rgba(241, 241, 241, 0.698);
-  -webkit-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all ease 1s;
+  -o-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+  transition: all ease 1s;
+  -webkit-transform: rotate(o);
+  -moz-transform: rotate(o);
+  -ms-transform: rotate(o);
+  -o-transform: rotate(o);
+  transform: rotate(o);
 }
 
-.toggle-mode:hover:before {
-  width: 100%;
+.moon {
+  color: rgb(0, 8, 43);
 }
 
-.toggle-mode:before {
-  left: 0;
+.moon:hover {
+  color: rgb(170, 197, 221);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.sun {
+  color: yellow;
+}
+
+.sun:hover {
+  color: rgb(228, 196, 18);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
 }

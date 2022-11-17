@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -16,12 +17,14 @@
 }
 
 body {
+  position: relative;
   margin: 0;
   width: 100vw;
   height: 100vh;
   font-family: 'Poppins', sans-serif;
   -webkit-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
@@ -36,6 +39,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   background-color: var(--bg-Secondary);
+  -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 
@@ -49,10 +53,15 @@ body.dark::-webkit-scrollbar-thumb {
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
   flex-direction: row;
   height: 100vh;
 }
@@ -65,20 +74,30 @@ body.dark .main {
 .main {
   -webkit-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
   flex-direction: column;
   -webkit-box-align: center;
   -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
   justify-content: center;
   text-align: center;
 }
@@ -89,6 +108,7 @@ body.dark .main {
   background-color: var(--bg-Secondary);
   -webkit-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
@@ -111,17 +131,26 @@ body.dark .wrapper {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
   align-items: center;
   text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
   flex-direction: column;
   background-color: #fff;
   color: #333;
@@ -133,13 +162,19 @@ body.dark .wrapper {
   text-align: center;
   -webkit-transform: translate(-50%, 50%);
   -ms-transform: translate(-50%, 50%);
+  -moz-transform: translate(-50%, 50%);
+  -o-transform: translate(-50%, 50%);
   transform: translate(-50%, 50%);
   border: 10px solid #f3f3f3;
   border-top: 10px solid var(--bg-primary);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
   width: 80px;
   height: 80px;
   -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  -o-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
 }
 
@@ -154,13 +189,43 @@ body.dark .wrapper {
   }
 }
 
-@keyframes spin {
+@-moz-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -171,9 +236,27 @@ body.dark .loading {
 }
 
 .create {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-align: center;
 }
@@ -181,8 +264,11 @@ body.dark .loading {
 .listButton {
   background-color: var(--bg-Secondary);
   -webkit-box-shadow: 0px 5px 25px var(--bg-Secondary);
+  -moz-box-shadow: 0px 5px 25px var(--bg-Secondary);
   box-shadow: 0px 5px 25px var(--bg-Secondary);
   border: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
   cursor: default;
   font-size: inherit;
@@ -190,12 +276,18 @@ body.dark .loading {
   color: var(--color);
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
   align-items: center;
   margin-top: 30px;
   height: 34px;
@@ -205,20 +297,28 @@ body.dark .loading {
 
   -ms-transform: rotate(0);
 
+  -moz-transform: rotate(0);
+
+  -o-transform: rotate(0);
+
   transform: rotate(0);
   -webkit-transition: 0.3s ease-out;
   -o-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
 
 .listButton:hover {
   -webkit-transform: rotate(224deg);
   -ms-transform: rotate(224deg);
+  -moz-transform: rotate(224deg);
+  -o-transform: rotate(224deg);
   transform: rotate(224deg);
 }
 
 body.dark .listButton {
   background-color: var(--S-Dark);
   -webkit-box-shadow: 0px 5px 25px var(--S-Dark);
+  -moz-box-shadow: 0px 5px 25px var(--S-Dark);
   box-shadow: 0px 5px 25px var(--S-Dark);
 }

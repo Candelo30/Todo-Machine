@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
+import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
 import { TbClick } from 'react-icons/tb';
 import './header.css';
 
@@ -29,14 +29,19 @@ function Header() {
       <header>
         <span className="hader-logo">Todo Machine</span>
         <nav>
-          <button
-            className="toggle-mode"
-            onClick={toggleThemeChange}
-            defaultChecked={checked}
-          >
-            Cambia de tema
-            <TbClick />
-          </button>
+          {checked ? (
+            <BsFillSunFill
+              className="sun mode" 
+              onClick={toggleThemeChange}
+              defaultChecked={checked}
+            />
+          ) : (
+            <BsFillMoonFill
+              className="moon mode"
+              onClick={toggleThemeChange}
+              defaultChecked={checked}
+            />
+          )}
         </nav>
       </header>
     </>
