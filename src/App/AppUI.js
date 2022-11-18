@@ -56,7 +56,9 @@ function AppUI() {
             {!loading && !searchedTodos.length && (
               <p className="create">
                 ¡Crea tu primer tarea! presionando el icono{' '}
-                <span onClick={ onClickButton } className="listButton">+</span>
+                <span onClick={onClickButton} className="listButton">
+                  +
+                </span>
               </p>
             )}
             {searchedTodos.map((todo) => (
@@ -78,7 +80,6 @@ function AppUI() {
         </Modal>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
-      
     </React.Fragment>
   );
 }
