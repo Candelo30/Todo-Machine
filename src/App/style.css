@@ -19,8 +19,6 @@
 body {
   position: relative;
   margin: 0;
-  width: 100vw;
-  height: 100vh;
   font-family: 'Poppins', sans-serif;
   -webkit-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
