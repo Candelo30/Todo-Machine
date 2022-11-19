@@ -7,6 +7,7 @@ const TodoContext = React.createContext(); // CreateContext es una herramienta d
 
 function TodoProvider(props) {
   const [openModal, setOpenModal] = React.useState(false);
+  const [time, setTime] = React.useState();
   const { todos, saveTodos, loading, error } = useLocalstorage('TODO_V1', []);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
@@ -26,16 +27,15 @@ function TodoProvider(props) {
     });
   }
 
-    // Función para añadir un nuevo TODO
-    const addTodo = (text) => {
-      const newTodos = [...todos];
-      newTodos.push({
-        completed: false,
-        text,
-      });
-      saveTodos(newTodos);
-    };
-  
+  // Función para añadir un nuevo TODO
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      completed: false,
+      text,
+    });
+    saveTodos(newTodos);
+  };
 
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);

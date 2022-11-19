@@ -1,14 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './TodoItem.css';
 import { BsCheckLg, BsXLg } from 'react-icons/bs';
+import {TodoContext} from '../TodoContext';
 
 function TodoItem(props) {
-  const ti = () => {
-    const fechahora = new Date();
-    const hora = fechahora.getHours();
-    const minuto = fechahora.getMinutes();
-    return `${hora}:${minuto}`;
-  };
   return (
     <li className={`TodoItem ${props.completed && 'TodoItems-completed'}`}>
       <BsCheckLg
@@ -20,7 +15,6 @@ function TodoItem(props) {
       </p>
       <BsXLg className="Icon Icon-delete" onClick={props.onDelete} />
       <div className="">
-        <h2>{ti()}</h2>
       </div>
     </li>
   );
