@@ -1,7 +1,6 @@
 import React from 'react';
 import './TodoItem.css';
 import { BsCheckLg, BsXLg } from 'react-icons/bs';
-import {TodoContext} from '../TodoContext';
 
 function TodoItem(props) {
   return (
