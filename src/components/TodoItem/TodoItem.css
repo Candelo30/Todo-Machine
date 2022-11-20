@@ -99,6 +99,10 @@ body.dark .TodoItems-completed {
   color: #4caf50;
 }
 
+.Icon-edit:hover {
+  color: orange;
+}
+
 .Icon-delete {
   position: absolute;
   top: -13px;

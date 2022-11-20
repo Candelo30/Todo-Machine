@@ -1,6 +1,6 @@
 import React from 'react';
 import './TodoItem.css';
-import { BsCheckLg, BsXLg } from 'react-icons/bs';
+import { BsCheckLg, BsXLg, BsPencil, BsTrashFill } from 'react-icons/bs';
 
 function TodoItem(props) {
   return (
@@ -12,9 +12,12 @@ function TodoItem(props) {
       <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
         {props.text}
       </p>
-      <BsXLg className="Icon Icon-delete" onClick={props.onDelete} />
-      <div className="">
-      </div>
+      <BsTrashFill className="Icon Icon-delete" onClick={props.onDelete} />
+      {<BsPencil className="Icon Icon-edit" /> ? (
+        <BsPencil className="Icon Icon-edit" />
+      ) : (
+        <BsXLg className="Icon Icon-cansel" />
+      )}
     </li>
   );
 }
