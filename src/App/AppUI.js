@@ -23,6 +23,7 @@ function AppUI() {
     DelatedTodo,
     openModal,
     setOpenModal,
+    updateTodos,
   } = React.useContext(TodoContext);
   const onClickButton = () => {
     setOpenModal((prevState) => !prevState);

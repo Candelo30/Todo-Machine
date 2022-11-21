@@ -7,7 +7,6 @@ const TodoContext = React.createContext(); // CreateContext es una herramienta d
 
 function TodoProvider(props) {
   const [openModal, setOpenModal] = React.useState(false);
-  const [time, setTime] = React.useState();
   const { todos, saveTodos, loading, error } = useLocalstorage('TODO_V1', []);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
@@ -35,6 +34,12 @@ function TodoProvider(props) {
       text,
     });
     saveTodos(newTodos);
+  };
+
+  const updateTodos = (text) => {
+    const newTodos = [...todos];
+    const TodoIndex = newTodos.find((todo) => todo.text === text);
+    saveTodos(TodoIndex);
   };
 
   const CompletedTodo = (text) => {
@@ -71,6 +76,7 @@ function TodoProvider(props) {
   return (
     <TodoContext.Provider
       value={{
+        updateTodos,
         loading,
         error,
         countsTodos,

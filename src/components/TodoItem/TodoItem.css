@@ -111,3 +111,30 @@ body.dark .TodoItems-completed {
 .Icon-delete:hover {
   color: red;
 }
+
+.form-item {
+  display: flex;
+  flex-direction: row;
+  box-shadow: none;
+  padding: 0;
+  margin: 10px 0;
+  border: none;
+  width: 75%;
+  background-color: transparent;
+}
+
+body.dark .form-item {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.input-edit {
+  background-color: transparent;
+  color: currentColor;
+  border: none;
+  border-bottom: 1px var(--S-Dark) solid;
+  outline: none;
+  width: -moz-calc(100% - 120px);
+  width: calc(100% - 120px);
+}
