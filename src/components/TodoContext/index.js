@@ -38,7 +38,7 @@ function TodoProvider(props) {
 
   const updateTodos = (text) => {
     const newTodos = [...todos];
-    const TodoIndex = newTodos.find((todo) => todo.text === text);
+    const TodoIndex = newTodos.findIndex((todo) => todo.text === text);
     saveTodos(TodoIndex);
   };
 
