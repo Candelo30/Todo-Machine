@@ -95,7 +95,14 @@ body.dark .TodoItems-completed {
   position: absolute;
   left: 12px;
 }
-.Icon-check--active {
+
+.Icon-save {
+  background-color: transparent;
+  color: currentColor;
+  border: none;
+  margin-left: 5px;
+}
+.Icon-check--active, .Icon-save:hover {
   color: #4caf50;
 }
 
@@ -108,7 +115,7 @@ body.dark .TodoItems-completed {
   top: -13px;
   right: -9px;
 }
-.Icon-delete:hover {
+.Icon-delete:hover, .Icon-cansel:hover {
   color: red;
 }
 

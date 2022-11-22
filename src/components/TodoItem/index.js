@@ -1,10 +1,16 @@
 import React from 'react';
 import './TodoItem.css';
-import { BsCheckLg, BsXLg, BsPencil, BsTrashFill } from 'react-icons/bs';
+import {
+  BsCheckLg,
+  BsXLg,
+  BsPencil,
+  BsTrashFill,
+  BsSave,
+} from 'react-icons/bs';
 import { TodoContext } from '../TodoContext';
 
 function TodoItem(props) {
-  const { addTodo } = React.useContext(TodoContext);
+  const { UpdateaddTodo } = React.useContext(TodoContext);
   const [isedit, setIsedit] = React.useState(false);
 
   const [newTodoValue, setNewTodoValue] = React.useState('');
@@ -22,7 +28,7 @@ function TodoItem(props) {
   };
 
   const onSubmit = (event) => {
-    addTodo(newTodoValue);
+    UpdateaddTodo(newTodoValue);
     event.preventDefault();
     setIsedit(false);
   };
@@ -36,7 +42,9 @@ function TodoItem(props) {
       {isedit ? (
         <form className="form-item" onSubmit={onSubmit}>
           <input type="text" className="input-edit" onChange={onChange} />
-          <input type="submit" onSubmit={onSubmit} />
+          <button type="submit" className="Icon Icon-save">
+            <BsSave />
+          </button>
         </form>
       ) : (
         <p

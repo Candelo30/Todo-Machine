@@ -35,7 +35,17 @@ function TodoProvider(props) {
     });
     saveTodos(newTodos);
   };
-  
+
+    // Función para añadir un nuevo TODO
+    const UpdateaddTodo = (text) => {
+      const TodoIndex = todos.findIndex((todo) => todo.text === text);
+      TodoIndex.flat({
+        completed: false,
+        text,
+      });
+      saveTodos(TodoIndex);
+    };
+
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const msgcompleted = confirm(
@@ -74,6 +84,7 @@ function TodoProvider(props) {
         error,
         countsTodos,
         completedTodos,
+        UpdateaddTodo,
         searchValue,
         setSearchValue,
         searchedTodos,

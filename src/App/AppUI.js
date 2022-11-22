@@ -20,6 +20,7 @@ function AppUI() {
     loading,
     searchedTodos,
     CompletedTodo,
+    UpdateaddTodo,
     DelatedTodo,
     openModal,
     setOpenModal,
@@ -66,6 +67,7 @@ function AppUI() {
                 key={todo.text}
                 text={todo.text}
                 completed={todo.completed}
+                UpdateaddTodo={UpdateaddTodo}
                 onComplete={() => CompletedTodo(todo.text)}
                 onDelete={() => DelatedTodo(todo.text)}
               />
