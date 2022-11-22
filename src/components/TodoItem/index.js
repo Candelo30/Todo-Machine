@@ -4,7 +4,7 @@ import { BsCheckLg, BsXLg, BsPencil, BsTrashFill } from 'react-icons/bs';
 import { TodoContext } from '../TodoContext';
 
 function TodoItem(props) {
-  const { updateTodos } = React.useContext(TodoContext);
+  const { addTodo } = React.useContext(TodoContext);
   const [isedit, setIsedit] = React.useState(false);
 
   const [newTodoValue, setNewTodoValue] = React.useState('');
@@ -22,7 +22,7 @@ function TodoItem(props) {
   };
 
   const onSubmit = (event) => {
-    updateTodos(newTodoValue);
+    addTodo(newTodoValue);
     event.preventDefault();
     setIsedit(false);
   };

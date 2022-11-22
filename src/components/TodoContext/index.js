@@ -35,13 +35,7 @@ function TodoProvider(props) {
     });
     saveTodos(newTodos);
   };
-
-  const updateTodos = (text) => {
-    const newTodos = [...todos];
-    const TodoIndex = newTodos.findIndex((todo) => todo.text === text);
-    saveTodos(TodoIndex);
-  };
-
+  
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const msgcompleted = confirm(
@@ -76,7 +70,6 @@ function TodoProvider(props) {
   return (
     <TodoContext.Provider
       value={{
-        updateTodos,
         loading,
         error,
         countsTodos,
