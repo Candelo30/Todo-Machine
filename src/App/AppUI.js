@@ -11,7 +11,7 @@ import { Tick } from '../components/timeShow/';
 import { Illustrations } from '../components/illustrations/illustrations.js';
 import { Modal } from '../Portal/';
 import { TodoForm } from '../components/TodoForm/';
-import { BlockPicker } from 'react-color';
+import { SliderPicker } from 'react-color';
 
 import './normalize.css';
 import './style.css';
@@ -101,7 +101,7 @@ function AppUI() {
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
       <Createcolor />
-      <BlockPicker color={color} onChangeComplete={hanleonChange} />
+      <SliderPicker color={color} onChangeComplete={hanleonChange} />
     </React.Fragment>
   );
 }
