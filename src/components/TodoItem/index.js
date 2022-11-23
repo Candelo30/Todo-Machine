@@ -43,11 +43,7 @@ function TodoItem(props) {
       {isedit ? (
         <form className="form-item" onSubmit={onSubmit}>
           <input type="text" className="input-edit" onChange={onChange} />
-          <button
-            type="submit"
-            className="Icon Icon-save"
-            onClick={props.UpdateaddTodo}
-          >
+          <button type="submit" className="Icon Icon-save">
             <BsSave />
           </button>
         </form>

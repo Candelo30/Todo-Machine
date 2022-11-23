@@ -40,17 +40,10 @@ function TodoProvider(props) {
   // Función para añadir un nuevo TODO
   const UpdateaddTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
-    const msgupdate = confirm('¿Deseas editar esta tarea?');
     const NewTodos = [...todos];
 
-    if (msgupdate) {
-      alert('¡Gracias por confirmar!');
-      NewTodos.splice(TodoIndex, 1, newTodo);
-      console.log(newTodo)
-    } else {
-      alert('¡Haz denegado el mensaje!');
-
-    }
+    NewTodos.splice(TodoIndex, 1, newTodo);
+    console.log(newTodo);
     saveTodos(NewTodos);
   };
 
