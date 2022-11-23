@@ -13,7 +13,7 @@ function TodoProvider(props) {
   const countsTodos = todos.length;
 
   const [searchValue, setSearchValue] = React.useState('');
-  const [newTodoValue, setNewTodoValue] = React.useState('');
+  const [newTodo, setNewTodoValue] = React.useState('');
 
   let searchedTodos = [];
 
@@ -45,7 +45,8 @@ function TodoProvider(props) {
 
     if (msgupdate) {
       alert('¡Gracias por confirmar!');
-      NewTodos.splice(TodoIndex, 1, newTodoValue);
+      NewTodos.splice(TodoIndex, 1, newTodo);
+      console.log(newTodo)
     } else {
       alert('¡Haz denegado el mensaje!');
 
@@ -93,7 +94,7 @@ function TodoProvider(props) {
         completedTodos,
         UpdateaddTodo,
         searchValue,
-        newTodoValue,
+        newTodo,
         setNewTodoValue,
         setSearchValue,
         searchedTodos,

@@ -10,7 +10,7 @@ import {
 import { TodoContext } from '../TodoContext';
 
 function TodoItem(props) {
-  const { UpdateaddTodo, newTodoValue, setNewTodoValue } =
+  const { UpdateaddTodo, newTodo, setNewTodoValue } =
     React.useContext(TodoContext);
   const [isedit, setIsedit] = React.useState(false);
 
@@ -25,12 +25,11 @@ function TodoItem(props) {
   // Creamos una función para actualizar el estado de nuestro nuevo TODO
   const onChange = (event) => {
     setNewTodoValue(event.target.value);
-    console.log(event.target.value);
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
-    UpdateaddTodo(newTodoValue);
+    UpdateaddTodo(newTodo);
     setNewTodoValue('');
     setIsedit(false);
   };
@@ -44,7 +43,11 @@ function TodoItem(props) {
       {isedit ? (
         <form className="form-item" onSubmit={onSubmit}>
           <input type="text" className="input-edit" onChange={onChange} />
-          <button type="submit" className="Icon Icon-save">
+          <button
+            type="submit"
+            className="Icon Icon-save"
+            onClick={props.UpdateaddTodo}
+          >
             <BsSave />
           </button>
         </form>
