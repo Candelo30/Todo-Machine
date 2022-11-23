@@ -12,7 +12,7 @@ import { Illustrations } from '../components/illustrations/illustrations.js';
 import { Modal } from '../Portal/';
 import { Modalcolor } from '../Portalcolor/';
 import { TodoForm } from '../components/TodoForm/';
-import { SliderPicker } from 'react-color';
+import { CirclePicker } from 'react-color';
 
 import './normalize.css';
 import './style.css';
@@ -104,7 +104,7 @@ function AppUI() {
       )}
       {!!OpenModalcolor && (
         <Modalcolor>
-          <SliderPicker color={color} onChangeComplete={hanleonChange} />
+          <CirclePicker color={color} onChangeComplete={hanleonChange} />
         </Modalcolor>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
