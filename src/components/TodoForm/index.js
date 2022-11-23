@@ -6,7 +6,7 @@ function TodoForm() {
   // Creamos un estado para nuestro nuevo TODO
   const [newTodoValue, setNewTodoValue] = React.useState('');
   // Desestructuramos las funciones que necesitamos para añadir un TODO y cerrar nuestro modal
-  const { addTodo, setOpenModal } = React.useContext(TodoContext);
+  const { addTodo, setOpenModal, color } = React.useContext(TodoContext);
 
   // Creamos una función para actualizar el estado de nuestro nuevo TODO
   const onChange = (event) => {
@@ -30,24 +30,45 @@ function TodoForm() {
     setNewTodoValue('');
   };
 
+  const Appstyle = {
+    boxShadow: `0px 2px  10px ${color}`,
+    border: ` 2px solid ${color}`,
+  };
+
+  const Appstylebuttonprimary = {
+    backgroundColor: color,
+  };
+
+  const AppstyleSecondary = {
+    backgroundColor: color,
+    transition: "background-color 0.5s ease-in",
+    opacity: .3,
+  };
+
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} style={Appstyle}>
       <label>¿Qué tarea quieres Realizar?</label>
       <textarea
         required
         value={newTodoValue}
         onChange={onChange}
         placeholder="Ej: Salir a caminar"
+        style={Appstyle}
       />
       <div className="TodoForm-buttonContainer">
         <button
           type="button"
           className="TodoForm-button TodoForm-button--cancel"
           onClick={onCancel}
+          style={AppstyleSecondary}
         >
           Cancelar
         </button>
-        <button type="submit" className="TodoForm-button TodoForm-button--add">
+        <button
+          type="submit"
+          className="TodoForm-button TodoForm-button--add"
+          style={Appstylebuttonprimary}
+        >
           Añadir
         </button>
       </div>
