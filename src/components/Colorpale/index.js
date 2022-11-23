@@ -9,7 +9,7 @@ function Createcolor(props) {
 
   return (
     <button
-      title="Añadir tarea"
+      title="Cambia el color"
       className="Createcolor"
       onClick={() => onClickButton()}
     >
