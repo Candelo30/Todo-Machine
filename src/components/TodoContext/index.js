@@ -14,7 +14,7 @@ function TodoProvider(props) {
 
   const [searchValue, setSearchValue] = React.useState('');
   const [newTodo, setNewTodoValue] = React.useState('');
-
+  
   let searchedTodos = [];
 
   if (!searchValue >= 1) {

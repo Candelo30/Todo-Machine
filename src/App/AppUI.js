@@ -29,10 +29,19 @@ function AppUI() {
   const onClickButton = () => {
     setOpenModal((prevState) => !prevState);
   };
+  const [color, setcolor] = React.useState('#0d47a1');
+  const hanleonChange = (color) => {
+    setcolor(color.hex);
+    console.log(color.hex);
+  };
+
+  const AppStyle = {
+    backgroundColor: color,
+  }
   return (
     <React.Fragment>
-      <Header />
-      <div className="main-box">
+      <Header/>
+      <div className="main-box" style={AppStyle}>
         <div className="wrapper">
           <Illustrations />
         </div>
@@ -83,7 +92,7 @@ function AppUI() {
         </Modal>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
-      <BlockPicker />
+      <BlockPicker color={color} onChangeComplete={hanleonChange} />
     </React.Fragment>
   );
 }
