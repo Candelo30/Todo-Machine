@@ -103,7 +103,9 @@ function AppUI() {
         </Modal>
       )}
       {!!OpenModalcolor && (
-        <SliderPicker color={color} onChangeComplete={hanleonChange} />
+        <Modalcolor>
+          <SliderPicker color={color} onChangeComplete={hanleonChange} />
+        </Modalcolor>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
       <Createcolor setOpenModalcolor={setOpenModalcolor} />
