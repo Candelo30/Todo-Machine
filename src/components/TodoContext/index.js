@@ -54,7 +54,7 @@ function TodoProvider(props) {
 
     if (msgcompleted) {
       alert('¡Gracias por confirmar!');
-      NewTodos[TodoIndex].text = true;
+      NewTodos[TodoIndex].completed = true;
     } else {
       alert('¡Haz denegado el mensaje!');
       NewTodos[TodoIndex].completed = false;

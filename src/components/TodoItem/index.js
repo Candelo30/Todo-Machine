@@ -41,9 +41,19 @@ function TodoItem(props) {
         onClick={props.onComplete}
       />
       {isedit ? (
-        <form className="form-item" onSubmit={onSubmit}>
-          <input type="text" className="input-edit" onChange={onChange} required />
-          <button type="submit" className="Icon Icon-save" onClick={props.UpdateaddTodo}>
+        <form className="form-item" onSubmit={onSubmit} key={props.text}>
+          <input
+            type="text"
+            className="input-edit"
+            placeholder="Edita tu tarea"
+            onChange={onChange}
+            required
+          />
+          <button
+            type="submit"
+            className="Icon Icon-save"
+            onClick={props.UpdateaddTodo}
+          >
             <BsSave />
           </button>
         </form>
@@ -58,7 +68,7 @@ function TodoItem(props) {
       {isedit ? (
         <BsXLg className="Icon Icon-cansel" onClick={handerClickcalse} />
       ) : (
-        <BsPencil className="Icon Icon-edit" onClick={handerClick}/>
+        <BsPencil className="Icon Icon-edit" onClick={handerClick} />
       )}
     </li>
   );
