@@ -10,6 +10,7 @@ import { Tick } from '../components/timeShow/';
 import { Illustrations } from '../components/illustrations/illustrations.js';
 import { Modal } from '../Portal/';
 import { TodoForm } from '../components/TodoForm/';
+import { BlockPicker } from 'react-color';
 
 import './normalize.css';
 import './style.css';
@@ -82,6 +83,7 @@ function AppUI() {
         </Modal>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
+      <BlockPicker />
     </React.Fragment>
   );
 }
