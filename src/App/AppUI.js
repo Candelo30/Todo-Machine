@@ -6,6 +6,7 @@ import { TodoSearch } from '../components/TodoSearch/';
 import { TodoList } from '../components/TodoList/';
 import { TodoItem } from '../components/TodoItem/';
 import { CreateTodoButton } from '../components/CreateTodoButton/';
+import { Createcolor } from '../components/Colorpale/';
 import { Tick } from '../components/timeShow/';
 import { Illustrations } from '../components/illustrations/illustrations.js';
 import { Modal } from '../Portal/';
@@ -25,24 +26,27 @@ function AppUI() {
     openModal,
     setOpenModal,
     UpdateaddTodo,
+    color,
+    setcolor,
   } = React.useContext(TodoContext);
   const onClickButton = () => {
     setOpenModal((prevState) => !prevState);
   };
-  const [color, setcolor] = React.useState('#0d47a1');
   const hanleonChange = (color) => {
     setcolor(color.hex);
     console.log(color.hex);
   };
 
-  const AppStyle = {
+  const Appstyle = {
     backgroundColor: color,
-  }
+    boxShadow: `0px 5px  25px ${color}`,
+  };
+
   return (
     <React.Fragment>
-      <Header/>
-      <div className="main-box" style={AppStyle}>
-        <div className="wrapper">
+      <Header />
+      <div className="main-box">
+        <div className="wrapper" style={Appstyle}>
           <Illustrations />
         </div>
         <div className="main">
@@ -67,7 +71,11 @@ function AppUI() {
             {!loading && !searchedTodos.length && (
               <p className="create">
                 ¡Crea tu primer tarea! presionando el icono{' '}
-                <span onClick={onClickButton} className="listButton">
+                <span
+                  style={Appstyle}
+                  onClick={onClickButton}
+                  className="listButton"
+                >
                   +
                 </span>
               </p>
@@ -92,6 +100,7 @@ function AppUI() {
         </Modal>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
+      <Createcolor />
       <BlockPicker color={color} onChangeComplete={hanleonChange} />
     </React.Fragment>
   );

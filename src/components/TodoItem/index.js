@@ -10,9 +10,14 @@ import {
 import { TodoContext } from '../TodoContext';
 
 function TodoItem(props) {
-  const { UpdateaddTodo, newTodo, setNewTodoValue } =
+  const { UpdateaddTodo, newTodo, setNewTodoValue, color } =
     React.useContext(TodoContext);
   const [isedit, setIsedit] = React.useState(false);
+
+  const Appstyle = {
+    boxShadow: `0px 2px  10px ${color}`,
+    border: ` 2px solid ${color}`,
+  };
 
   const handerClick = () => {
     setIsedit(true);
@@ -35,7 +40,10 @@ function TodoItem(props) {
   };
 
   return (
-    <li className={`TodoItem ${props.completed && 'TodoItems-completed'}`}>
+    <li
+      className={`TodoItem ${props.completed && 'TodoItems-completed'}`}
+      style={Appstyle}
+    >
       <BsCheckLg
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
         onClick={props.onComplete}

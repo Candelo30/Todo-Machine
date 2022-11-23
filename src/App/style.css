@@ -31,19 +31,6 @@ body.dark {
   background-color: #00051b;
 }
 
-body::-webkit-scrollbar {
-  width: 5px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--bg-Secondary);
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-
-body.dark::-webkit-scrollbar-thumb {
-  background-color: var(--S-Dark);
-}
 
 .main-box {
   position: relative;

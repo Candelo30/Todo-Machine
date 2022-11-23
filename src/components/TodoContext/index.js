@@ -9,12 +9,14 @@ function TodoProvider(props) {
   const [openModal, setOpenModal] = React.useState(false);
   const { todos, saveTodos, loading, error } = useLocalstorage('TODO_V1', []);
 
+  const [color, setcolor] = React.useState('#0d47a1');
+
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const countsTodos = todos.length;
 
   const [searchValue, setSearchValue] = React.useState('');
   const [newTodo, setNewTodoValue] = React.useState('');
-  
+
   let searchedTodos = [];
 
   if (!searchValue >= 1) {
@@ -94,6 +96,8 @@ function TodoProvider(props) {
         DelatedTodo,
         openModal,
         setOpenModal,
+        color,
+        setcolor,
       }}
     >
       {props.children}

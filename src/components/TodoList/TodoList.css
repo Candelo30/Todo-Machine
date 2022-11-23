@@ -39,16 +39,3 @@ ul {
   overflow-y: scroll;
 }
 
-ul::-webkit-scrollbar {
-  width: 5px;
-}
-
-ul::-webkit-scrollbar-thumb {
-  background-color: var(--bg-Secondary);
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-
-body.dark ul::-webkit-scrollbar-thumb {
-  background-color: var(--S-Dark);
-}

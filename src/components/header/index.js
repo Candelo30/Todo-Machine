@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
-import { TbClick } from 'react-icons/tb';
 import './header.css';
+import { TodoContext } from '../TodoContext';
 
 function Header() {
+
+  const { color } =
+    React.useContext(TodoContext);
+
+
+    const Appstyle = {
+      backgroundColor: color,
+    }
   const [checked, setChecked] = useState(
     localStorage.getItem('theme') === 'dark' ? true : false
   );
-
   useEffect(() => {
     document
       .getElementsByTagName('body')[0]
@@ -26,7 +33,7 @@ function Header() {
 
   return (
     <>
-      <header>
+      <header style={Appstyle}>
         <span className="hader-logo">Todo Machine</span>
         <nav>
           {checked ? (
