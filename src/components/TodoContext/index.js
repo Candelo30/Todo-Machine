@@ -39,11 +39,10 @@ function TodoProvider(props) {
 
   // Función para añadir un nuevo TODO
   const UpdateaddTodo = (text) => {
-    const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const NewTodos = [...todos];
-
+    const TodoIndex = todos.findIndex((todo) => todo.text === text);
     NewTodos.splice(TodoIndex, 1, newTodo);
-    console.log(newTodo);
+    console.log(newTodo)
     saveTodos(NewTodos);
   };
 
