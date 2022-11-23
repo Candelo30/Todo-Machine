@@ -29,10 +29,10 @@ function TodoItem(props) {
   };
 
   const onSubmit = (event) => {
-    UpdateaddTodo(newTodoValue);
     event.preventDefault();
-    setIsedit(false);
+    UpdateaddTodo(newTodoValue);
     setNewTodoValue('');
+    setIsedit(false);
   };
 
   return (

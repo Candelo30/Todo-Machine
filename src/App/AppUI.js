@@ -23,7 +23,6 @@ function AppUI() {
     DelatedTodo,
     openModal,
     setOpenModal,
-    UpdateaddTodo,
   } = React.useContext(TodoContext);
   const onClickButton = () => {
     setOpenModal((prevState) => !prevState);
@@ -67,7 +66,6 @@ function AppUI() {
                 key={todo.text}
                 text={todo.text}
                 completed={todo.completed}
-                UpdateaddTodo={() => UpdateaddTodo(todo.text)}
                 onComplete={() => CompletedTodo(todo.text)}
                 onDelete={() => DelatedTodo(todo.text)}
               />
