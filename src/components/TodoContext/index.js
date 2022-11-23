@@ -51,7 +51,7 @@ function TodoProvider(props) {
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const msgcompleted = confirm(
-      'Deseas completar o descompletar ' + text + '?'
+      'Pulsa canselar para descompletar\n o Pulsa Aceptar para completar la tarea ' + text 
     );
     const NewTodos = [...todos];
 
