@@ -10,6 +10,7 @@ import { Createcolor } from '../components/Colorpale/';
 import { Tick } from '../components/timeShow/';
 import { Illustrations } from '../components/illustrations/illustrations.js';
 import { Modal } from '../Portal/';
+import { Modalcolor } from '../Portalcolor/';
 import { TodoForm } from '../components/TodoForm/';
 import { SliderPicker } from 'react-color';
 
