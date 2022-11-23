@@ -31,18 +31,17 @@ function TodoProvider(props) {
   const addTodo = (text) => {
     const newTodos = [...todos];
     newTodos.push({
-      completed: false,
       text,
+      completed: false,
     });
     saveTodos(newTodos);
   };
 
   // Función para añadir un nuevo TODO
   const UpdateaddTodo = (text) => {
-    const NewTodos = [...todos];
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
-    NewTodos.splice(TodoIndex, 1, newTodo);
-    console.log(newTodo)
+    const NewTodos = [...todos];
+    NewTodos[TodoIndex].text = newTodo;
     saveTodos(NewTodos);
   };
 
@@ -55,7 +54,7 @@ function TodoProvider(props) {
 
     if (msgcompleted) {
       alert('¡Gracias por confirmar!');
-      NewTodos[TodoIndex].completed = true;
+      NewTodos[TodoIndex].text = true;
     } else {
       alert('¡Haz denegado el mensaje!');
       NewTodos[TodoIndex].completed = false;
