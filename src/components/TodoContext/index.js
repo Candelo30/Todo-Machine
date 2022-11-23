@@ -7,6 +7,7 @@ const TodoContext = React.createContext(); // CreateContext es una herramienta d
 
 function TodoProvider(props) {
   const [openModal, setOpenModal] = React.useState(false);
+  const [OpenModalcolor, setOpenModalcolor] = React.useState(false);
   const { todos, saveTodos, loading, error } = useLocalstorage('TODO_V1', []);
 
   const [color, setcolor] = React.useState('#0d47a1');
@@ -97,6 +98,8 @@ function TodoProvider(props) {
         openModal,
         setOpenModal,
         color,
+        setOpenModalcolor,
+        OpenModalcolor,
         setcolor,
       }}
     >

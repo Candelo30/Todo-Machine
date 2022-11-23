@@ -28,6 +28,8 @@ function AppUI() {
     UpdateaddTodo,
     color,
     setcolor,
+    setOpenModalcolor,
+    OpenModalcolor,
   } = React.useContext(TodoContext);
   const onClickButton = () => {
     setOpenModal((prevState) => !prevState);
@@ -99,9 +101,11 @@ function AppUI() {
           <TodoForm />
         </Modal>
       )}
+      {!!OpenModalcolor && (
+        <SliderPicker color={color} onChangeComplete={hanleonChange} />
+      )}
       <CreateTodoButton setOpenModal={setOpenModal} />
-      <Createcolor />
-      <SliderPicker color={color} onChangeComplete={hanleonChange} />
+      <Createcolor setOpenModalcolor={setOpenModalcolor} />
     </React.Fragment>
   );
 }
