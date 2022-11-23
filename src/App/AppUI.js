@@ -37,7 +37,6 @@ function AppUI() {
   };
   const hanleonChange = (color) => {
     setcolor(color.hex);
-    console.log(color.hex);
   };
 
   const Appstyle = {
