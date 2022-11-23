@@ -13,6 +13,7 @@ function TodoProvider(props) {
   const countsTodos = todos.length;
 
   const [searchValue, setSearchValue] = React.useState('');
+  const [newTodoValue, setNewTodoValue] = React.useState('');
 
   let searchedTodos = [];
 
@@ -36,15 +37,21 @@ function TodoProvider(props) {
     saveTodos(newTodos);
   };
 
-    // Función para añadir un nuevo TODO
-    const UpdateaddTodo = (text) => {
-      const TodoIndex = todos.findIndex((todo) => todo.text === text);
-      TodoIndex.flat({
-        completed: false,
-        text,
-      });
-      saveTodos(TodoIndex);
-    };
+  // Función para añadir un nuevo TODO
+  const UpdateaddTodo = (text) => {
+    const TodoIndex = todos.findIndex((todo) => todo.text === text);
+    const msgdelate = confirm('¿Deseas editar esta tarea?');
+    const NewTodos = [...todos];
+
+    if (msgdelate) {
+      alert('¡Gracias por confirmar!');
+      NewTodos.splice(TodoIndex, 1, NewTodos);
+    } else {
+      alert('¡Haz denegado el mensaje!');
+
+    }
+    saveTodos(NewTodos);
+  };
 
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
@@ -86,6 +93,8 @@ function TodoProvider(props) {
         completedTodos,
         UpdateaddTodo,
         searchValue,
+        newTodoValue,
+        setNewTodoValue,
         setSearchValue,
         searchedTodos,
         addTodo,

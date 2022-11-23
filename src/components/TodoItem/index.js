@@ -10,10 +10,10 @@ import {
 import { TodoContext } from '../TodoContext';
 
 function TodoItem(props) {
-  const { UpdateaddTodo } = React.useContext(TodoContext);
+  const { UpdateaddTodo, newTodoValue, setNewTodoValue } =
+    React.useContext(TodoContext);
   const [isedit, setIsedit] = React.useState(false);
 
-  const [newTodoValue, setNewTodoValue] = React.useState('');
   const handerClick = () => {
     setIsedit(true);
   };
@@ -25,12 +25,14 @@ function TodoItem(props) {
   // Creamos una función para actualizar el estado de nuestro nuevo TODO
   const onChange = (event) => {
     setNewTodoValue(event.target.value);
+    console.log(event.target.value);
   };
 
   const onSubmit = (event) => {
     UpdateaddTodo(newTodoValue);
     event.preventDefault();
     setIsedit(false);
+    setNewTodoValue('');
   };
 
   return (
