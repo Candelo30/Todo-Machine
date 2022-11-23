@@ -67,7 +67,7 @@ function AppUI() {
                 key={todo.text}
                 text={todo.text}
                 completed={todo.completed}
-                UpdateaddTodo={UpdateaddTodo}
+                UpdateaddTodo={() => UpdateaddTodo(todo.text)}
                 onComplete={() => CompletedTodo(todo.text)}
                 onDelete={() => DelatedTodo(todo.text)}
               />
