@@ -19,6 +19,10 @@ function TodoItem(props) {
     border: ` 2px solid ${color}`,
   };
 
+  const border = {
+    borderBottom: ` 2px solid ${color}`,
+  };
+
   const handerClick = () => {
     setIsedit(true);
   };
@@ -54,6 +58,7 @@ function TodoItem(props) {
             type="text"
             className="input-edit"
             placeholder="Edita tu tarea"
+            style={border}
             onChange={onChange}
             required
           />
