@@ -32,7 +32,7 @@ body.dark {
 }
 
 body.dark .colorPicker {
-  background-color: #00051b;
+  background-color: #030d3857 !important;
 }
 .main-box {
   position: relative;

@@ -199,7 +199,7 @@ function Illustrations() {
             stdDeviation="3"
             result="desenfoque"
           ></feGaussianBlur>
-          <feFlood flood-color="#888" />
+          <feFlood floodColor="#888" />
           <feComposite in2="desenfoque" operator="in" />
           <feOffset dx="3" dy="3"></feOffset>
           <feMerge>
