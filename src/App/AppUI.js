@@ -103,7 +103,7 @@ function AppUI() {
       )}
       {!!OpenModalcolor && (
         <Modalcolor>
-          <GithubPicker color={color} onChangeComplete={hanleonChange} />
+          <GithubPicker className="colorPicker" color={color} onChangeComplete={hanleonChange} />
         </Modalcolor>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
