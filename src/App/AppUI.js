@@ -12,7 +12,7 @@ import { Illustrations } from '../components/illustrations/illustrations.js';
 import { Modal } from '../Portal/';
 import { Modalcolor } from '../Portalcolor/';
 import { TodoForm } from '../components/TodoForm/';
-import { SwatchesPicker } from 'react-color';
+import { GithubPicker } from 'react-color';
 
 import './normalize.css';
 import './style.css';
@@ -103,7 +103,7 @@ function AppUI() {
       )}
       {!!OpenModalcolor && (
         <Modalcolor>
-          <SwatchesPicker color={color} onChangeComplete={hanleonChange} />
+          <GithubPicker color={color} onChangeComplete={hanleonChange} />
         </Modalcolor>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />

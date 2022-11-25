@@ -107,9 +107,6 @@ textarea::placeholder {
   font-weight: 400;
 }
 
-textarea:focus {
-  outline-color: var(--S-Dark);
-}
 
 .TodoForm-buttonContainer {
   margin-top: 14px;
