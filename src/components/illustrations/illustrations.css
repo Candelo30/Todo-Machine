@@ -1,6 +1,7 @@
 .illustrations {
   width: 100vw;
   height: 90px;
+  filter: drop-shadow(-5px -5px 5px); 
 }
 
 .wrapper-color {

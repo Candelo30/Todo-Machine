@@ -19,8 +19,6 @@ header {
   -ms-flex-align: center;
   align-items: center;
   font-size: large;
-  background-color: var(--bg-primary);
-  color: var(--color);
   -webkit-transition: 0.3s ease-out;
   -o-transition: 0.3s ease-out;
   -moz-transition: 0.3s ease-out;
@@ -31,9 +29,6 @@ header {
   cursor: default;
 }
 
-body.dark header {
-  background-color: var(--P-Dark);
-}
 
 .mode {
   z-index: 10;
@@ -51,12 +46,8 @@ body.dark header {
   transform: rotate(o);
 }
 
-.moon {
-  color: rgb(0, 8, 43);
-}
 
 .moon:hover {
-  color: rgb(170, 197, 221);
   -webkit-transform: rotate(360deg);
   -moz-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
@@ -64,12 +55,8 @@ body.dark header {
   transform: rotate(360deg);
 }
 
-.sun {
-  color: yellow;
-}
 
 .sun:hover {
-  color: rgb(228, 196, 18);
   -webkit-transform: rotate(360deg);
   -moz-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
