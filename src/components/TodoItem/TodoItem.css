@@ -124,7 +124,7 @@ body.dark .TodoItems-completed {
   flex-direction: row;
   box-shadow: none;
   padding: 0;
-  margin: 10px 0;
+  margin: 20px 0;
   border: none;
   width: 75%;
   background-color: transparent;
@@ -144,4 +144,10 @@ body.dark .form-item {
   outline: none;
   width: -moz-calc(100% - 120px);
   width: calc(100% - 120px);
+}
+
+.small-tex {
+  position: absolute;
+  top: 5px;
+  left: 10px;
 }

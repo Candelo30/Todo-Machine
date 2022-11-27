@@ -11,8 +11,8 @@
   cursor: pointer;
   font-size: 50px;
   position: fixed;
-  bottom: 75px;
-  right: 24px;
+  bottom: 14px;
+  right: 64px;
   font-weight: bold;
   color: var(--color);
   display: -webkit-box;

@@ -10,7 +10,7 @@ import {
 import { TodoContext } from '../TodoContext';
 
 function TodoItem(props) {
-  const { UpdateaddTodo, newTodo, setNewTodoValue, color } =
+  const { UpdateaddTodo, newTodo, setNewTodoValue, changeedit, color } =
     React.useContext(TodoContext);
   const [isedit, setIsedit] = React.useState(false);
 
@@ -30,7 +30,6 @@ function TodoItem(props) {
   const handerClickcalse = () => {
     setIsedit(false);
   };
-
   // Creamos una función para actualizar el estado de nuestro nuevo TODO
   const onChange = (event) => {
     setNewTodoValue(event.target.value);
@@ -48,6 +47,8 @@ function TodoItem(props) {
       className={`TodoItem ${props.completed && 'TodoItems-completed'}`}
       style={Appstyle}
     >
+      {changeedit ? <small className="small-tex">Editado</small> : ''}
+
       <BsCheckLg
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
         onClick={props.onComplete}

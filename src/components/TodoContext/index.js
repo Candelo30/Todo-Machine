@@ -18,6 +18,8 @@ function TodoProvider(props) {
   const [searchValue, setSearchValue] = React.useState('');
   const [newTodo, setNewTodoValue] = React.useState('');
 
+  const [changeedit, setchangeedit] = React.useState(false);
+
   let searchedTodos = [];
 
   if (!searchValue >= 1) {
@@ -46,12 +48,14 @@ function TodoProvider(props) {
     const NewTodos = [...todos];
     NewTodos[TodoIndex].text = newTodo;
     saveTodos(NewTodos);
+    setchangeedit(true);
   };
 
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const msgcompleted = confirm(
-      'Pulsa canselar para descompletar\n o Pulsa Aceptar para completar la tarea ' + text 
+      'Pulsa canselar para descompletar\n o Pulsa Aceptar para completar la tarea ' +
+        text
     );
     const NewTodos = [...todos];
 
@@ -101,6 +105,8 @@ function TodoProvider(props) {
         setOpenModalcolor,
         OpenModalcolor,
         setcolor,
+        changeedit,
+        setchangeedit,
       }}
     >
       {props.children}
