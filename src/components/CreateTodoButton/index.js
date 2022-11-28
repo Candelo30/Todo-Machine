@@ -4,11 +4,13 @@ import './CreateTodoButton.css';
 import { TodoContext } from '../TodoContext';
 
 function CreateTodoButton(props) {
+  const { color, setOpenModalcolor } = React.useContext(TodoContext);
   const onClickButton = () => {
     props.setOpenModal((prevState) => !prevState);
+    setOpenModalcolor(false)
   };
 
-  const { color } = React.useContext(TodoContext);
+  
 
   const Appstyle = {
     backgroundColor: color,
