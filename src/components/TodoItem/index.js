@@ -56,6 +56,13 @@ function TodoItem(props) {
           Tarea no completada
         </i>
       )}
+      {props.completed ? (
+        <i style={border} className="text-edit">
+          editado
+        </i>
+      ) : (
+        ''
+      )}
       <BsCheckLg
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
         onClick={props.onComplete}
