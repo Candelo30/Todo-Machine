@@ -16,7 +16,7 @@
   -webkit-align-items: center;
   -moz-box-align: center;
   align-items: center;
-  margin-top: 24px;
+  margin-top: 30px;
   border: 2px solid var(--bg-Secondary);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -147,3 +147,12 @@ body.dark .form-item {
   width: -moz-calc(100% - 120px);
   width: calc(100% - 120px);
 }
+
+.text-completed {
+  position: absolute;
+  top: -20px;
+  left: 5px;
+  font-size: smaller;
+  font-weight: 200;
+}
+

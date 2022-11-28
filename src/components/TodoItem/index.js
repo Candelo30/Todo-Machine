@@ -21,6 +21,7 @@ function TodoItem(props) {
 
   const border = {
     borderBottom: ` 2px solid ${color}`,
+    color: color,
   };
 
   const handerClick = () => {
@@ -46,6 +47,15 @@ function TodoItem(props) {
       className={`TodoItem ${props.completed && 'TodoItems-completed'}`}
       style={Appstyle}
     >
+      {props.completed ? (
+        <i style={border} className="text-completed">
+          Tarea completada
+        </i>
+      ) : (
+        <i style={border} className="text-completed">
+          Tarea no completada
+        </i>
+      )}
       <BsCheckLg
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
         onClick={props.onComplete}
