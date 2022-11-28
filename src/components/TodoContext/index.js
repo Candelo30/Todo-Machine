@@ -38,6 +38,7 @@ function TodoProvider(props) {
     newTodos.push({
       text,
       completed: false,
+      textEdit: false,
     });
     saveTodos(newTodos);
   };
@@ -47,8 +48,8 @@ function TodoProvider(props) {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const NewTodos = [...todos];
     NewTodos[TodoIndex].text = newTodo;
+    NewTodos[TodoIndex].textEdit = true;
     saveTodos(NewTodos);
-    setchangeedit(true);
   };
 
   const CompletedTodo = (text) => {
