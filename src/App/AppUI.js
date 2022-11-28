@@ -87,6 +87,7 @@ function AppUI() {
                 key={todo.text}
                 text={todo.text}
                 completed={todo.completed}
+                textEdit={todo.textEdit}
                 onComplete={() => CompletedTodo(todo.text)}
                 onDelete={() => DelatedTodo(todo.text)}
                 UpdateaddTodo={() => UpdateaddTodo(todo.text)}
@@ -103,7 +104,11 @@ function AppUI() {
       )}
       {!!OpenModalcolor && (
         <Modalcolor>
-          <GithubPicker className="colorPicker" color={color} onChangeComplete={hanleonChange} />
+          <GithubPicker
+            className="colorPicker"
+            color={color}
+            onChangeComplete={hanleonChange}
+          />
         </Modalcolor>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />

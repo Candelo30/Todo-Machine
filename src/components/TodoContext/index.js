@@ -18,8 +18,6 @@ function TodoProvider(props) {
   const [searchValue, setSearchValue] = React.useState('');
   const [newTodo, setNewTodoValue] = React.useState('');
 
-  const [changeedit, setchangeedit] = React.useState(false);
-
   let searchedTodos = [];
 
   if (!searchValue >= 1) {
@@ -106,8 +104,6 @@ function TodoProvider(props) {
         setOpenModalcolor,
         OpenModalcolor,
         setcolor,
-        changeedit,
-        setchangeedit,
       }}
     >
       {props.children}
