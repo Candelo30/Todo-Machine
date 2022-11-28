@@ -10,7 +10,7 @@ import {
 import { TodoContext } from '../TodoContext';
 
 function TodoItem(props) {
-  const { UpdateaddTodo, newTodo, setNewTodoValue, changeedit, color } =
+  const { UpdateaddTodo, newTodo, setNewTodoValue, color } =
     React.useContext(TodoContext);
   const [isedit, setIsedit] = React.useState(false);
 
@@ -39,7 +39,6 @@ function TodoItem(props) {
     event.preventDefault();
     UpdateaddTodo(newTodo);
     setNewTodoValue('');
-    setIsedit(false);
   };
 
   return (
@@ -47,8 +46,6 @@ function TodoItem(props) {
       className={`TodoItem ${props.completed && 'TodoItems-completed'}`}
       style={Appstyle}
     >
-      {changeedit ? <small className="small-tex">Editado</small> : ''}
-
       <BsCheckLg
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
         onClick={props.onComplete}
