@@ -12,10 +12,9 @@ import {
   FaGithub,
 } from 'react-icons/fa';
 
-const color = {
-    color: color,
-  };
-}
+const bgcolor = {
+  color: color,
+};
 
 import { TodoContext } from '../components/TodoContext';
 
@@ -45,7 +44,7 @@ function Modalinfo() {
                   href="https://www.linkedin.com/in/luis-eduardo-c-6015131ab/"
                   target="_blank"
                 >
-                  <FaLinkedin className="fa-brands fa-linkedin" style={color}/>
+                  <FaLinkedin className="fa-brands fa-linkedin" style={bgcolor} />
                 </a>
               </li>
               <li>
