@@ -39,6 +39,13 @@ function Modalinfo() {
           <span style={bgcolor}>+ </span>para que agreges tus tareas
         </p>
 
+        <h2 className="title">Cambia el color</h2>
+
+        <p>
+          Podras cambiar los colores de la app, algunos colores no se la dan muy
+          bien, así que prueba con todos, y cambia al modo oscuro o claro
+        </p>
+
         <footer className="footer">
           <h3>Luis Candelo</h3>
           <h4>Frontent Developer</h4>
