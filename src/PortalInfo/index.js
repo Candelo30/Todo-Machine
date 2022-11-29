@@ -12,8 +12,7 @@ import {
   FaGithub,
 } from 'react-icons/fa';
 
-const color {
-  const border = {
+const color = {
     color: color,
   };
 }
