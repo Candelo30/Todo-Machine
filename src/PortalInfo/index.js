@@ -34,7 +34,10 @@ function Modalinfo() {
 
         <h2>Crear tareas</h2>
 
-        <p>En la parte inferior encontraras un boton con un icono de <span style={bgcolor}>+</span>para que agreges tus tareas</p>
+        <p>
+          En la parte inferior encontraras un boton con un icono de{' '}
+          <span style={bgcolor}>+ </span>para que agreges tus tareas
+        </p>
 
         <footer className="footer">
           <h3>Luis Candelo</h3>
