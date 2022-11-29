@@ -31,6 +31,8 @@ function AppUI() {
     setcolor,
     setOpenModalcolor,
     OpenModalcolor,
+    openModalinfo,
+    setOpenModalinfo,
   } = React.useContext(TodoContext);
   const onClickButton = () => {
     setOpenModal((prevState) => !prevState);
