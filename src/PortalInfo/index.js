@@ -52,7 +52,10 @@ function Modalinfo() {
               </li>
               <li>
                 <a href="https://t.me/Candelo_30" target="_blank">
-                  <FaTelegram className="fa-brands fa-telegram" style={bgcolor}/>
+                  <FaTelegram
+                    className="fa-brands fa-telegram"
+                    style={bgcolor}
+                  />
                 </a>
               </li>
               <li>
@@ -60,7 +63,7 @@ function Modalinfo() {
                   href="https://discord.com/channels/@me/933515593863295067"
                   target="_blank"
                 >
-                  <FaDiscord className="fa-brands fa-discord" style={bgcolor}/>
+                  <FaDiscord className="fa-brands fa-discord" style={bgcolor} />
                 </a>
               </li>
               <li>
@@ -68,12 +71,18 @@ function Modalinfo() {
                   href="https://www.facebook.com/Luis.Candelo.bass/"
                   target="_blank"
                 >
-                  <FaFacebook className="fa-brands fa-facebook" />
+                  <FaFacebook
+                    className="fa-brands fa-facebook"
+                    style={bgcolor}
+                  />
                 </a>
               </li>
               <li>
                 <a href="https://wa.me/+573182584548" target="_blank">
-                  <FaWhatsapp className="fa-brands fa-whatsapp" />
+                  <FaWhatsapp
+                    className="fa-brands fa-whatsapp"
+                    style={bgcolor}
+                  />
                 </a>
               </li>
               <li>
@@ -81,12 +90,15 @@ function Modalinfo() {
                   href="https://www.instagram.com/luis_bass_1/?hl=es-la"
                   target="_blank"
                 >
-                  <FaInstagram className="fa-brands fa-instagram" />
+                  <FaInstagram
+                    className="fa-brands fa-instagram"
+                    style={bgcolor}
+                  />
                 </a>
               </li>
               <li>
                 <a href="https://github.com/Candelo30" target="_blank">
-                  <FaGithub className="fa-brands" />
+                  <FaGithub className="fa-brands" style={bgcolor} />
                 </a>
               </li>
             </ul>
