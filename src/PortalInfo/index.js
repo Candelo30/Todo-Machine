@@ -6,7 +6,7 @@ function Modalinfo() {
   // ReactDom tiene este método para crear portales
   return ReactDOM.createPortal(
     <div className="ModalBackground">
-      <div>
+      <div className="info">
         <h1>Todo Machine</h1>
         <p>
           📚 Una lista de pendientes sencilla, tiene las funciones normales,

@@ -24,6 +24,10 @@
   backdrop-filter: blur(5px);
 }
 
+.info {
+  padding: 8px;
+}
+
 body.dark .ModalBackground {
   background-color: #00051b26;
 }
