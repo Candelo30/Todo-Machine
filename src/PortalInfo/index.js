@@ -24,7 +24,7 @@ function Modalinfo() {
   return ReactDOM.createPortal(
     <div className="ModalBackground">
       <div className="info">
-        <h1>Todo Machine</h1>
+        <h1 className="title">Todo Machine</h1>
         <p>
           📚 Una lista de pendientes sencilla, tiene las funciones normales,
           como agregar, eliminara, y completar tus tareas, también te damos la
@@ -32,7 +32,7 @@ function Modalinfo() {
           esta app.
         </p>
 
-        <h2>Crear tareas</h2>
+        <h2 className="title">Crear tareas</h2>
 
         <p>
           En la parte inferior encontraras un boton con un icono de{' '}

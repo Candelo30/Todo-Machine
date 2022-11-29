@@ -31,6 +31,10 @@
   overflow-y: auto;
 }
 
+.title {
+  margin: 20px 0;
+}
+
 .Social-content__new {
   display: -webkit-box;
   display: -ms-flexbox;
