@@ -49,7 +49,7 @@ function TodoItem(props) {
     >
       {props.completed ? (
         <i style={border} className="text-completed">
-          Tarea completada
+          Completado
         </i>
       ) : (
         <i style={border} className="text-completed">
