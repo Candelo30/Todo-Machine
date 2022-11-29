@@ -31,6 +31,11 @@ function Modalinfo() {
           opción de poder filtras tus pendientes. Así que te invito a probar
           esta app.
         </p>
+
+        <h2>Crear tareas</h2>
+
+        <p>En la parte inferior encontraras un boton con un icono de <span style={bgcolor}>+</span>para que agreges tus tareas</p>
+
         <footer className="footer">
           <h3>Luis Candelo</h3>
           <h4>Frontent Developer</h4>
