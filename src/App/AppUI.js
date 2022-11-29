@@ -7,6 +7,7 @@ import { TodoList } from '../components/TodoList/';
 import { TodoItem } from '../components/TodoItem/';
 import { CreateTodoButton } from '../components/CreateTodoButton/';
 import { Createcolor } from '../components/Colorpale/';
+import { OpenInfo } from '../components/openInfo/';
 import { Tick } from '../components/timeShow/';
 import { Illustrations } from '../components/illustrations/illustrations.js';
 import { Modal } from '../Portal/';
@@ -113,6 +114,7 @@ function AppUI() {
           />
         </Modalcolor>
       )}
+      <OpenInfo setOpenModalinfo={setOpenModalinfo} />
       <CreateTodoButton setOpenModal={setOpenModal} />
       <Createcolor setOpenModalcolor={setOpenModalcolor} />
     </React.Fragment>

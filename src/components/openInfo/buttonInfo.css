@@ -12,7 +12,7 @@
   font-size: 50px;
   position: fixed;
   bottom: 14px;
-  right: 10px;
+  right: 120px;
   font-weight: bold;
   color: var(--color);
   display: -webkit-box;
@@ -33,26 +33,4 @@
   height: 64px;
   width: 64px;
 
-  -webkit-transform: rotate(0);
-
-  -ms-transform: rotate(0);
-
-  -moz-transform: rotate(0);
-
-  -o-transform: rotate(0);
-
-  transform: rotate(0);
-  -webkit-transition: 0.3s ease-out;
-  -o-transition: 0.3s ease-out;
-  -moz-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
 }
-
-.OpenbuttonInfo:hover {
-  -webkit-transform: rotate(224deg);
-  -ms-transform: rotate(224deg);
-  -moz-transform: rotate(224deg);
-  -o-transform: rotate(224deg);
-  transform: rotate(224deg);
-}
-
