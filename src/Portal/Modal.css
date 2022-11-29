@@ -25,6 +25,9 @@
 }
 
 .info {
+  width: 90%;
+  height: 300px;
+  overflow-y: auto;
   padding: 20px;
 }
 
