@@ -47,7 +47,7 @@
   margin: 0;
   list-style: none;
   font-size: 2em;
-  overflow: none;
+  overflow-y: none;
 }
 
 .footer {
