@@ -4,10 +4,11 @@ import './Colorpale.css';
 import { TodoContext } from '../TodoContext';
 
 function Createcolor(props) {
-  const { setOpenModal } = React.useContext(TodoContext);
+  const { setOpenModal, setOpenModalinfo } = React.useContext(TodoContext);
   const onClickButton = () => {
     props.setOpenModalcolor((prevState) => !prevState);
     setOpenModal(false)
+    setOpenModalinfo(false)
   };
 
   return (

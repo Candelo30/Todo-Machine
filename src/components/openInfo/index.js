@@ -14,7 +14,7 @@ function OpenInfo(props) {
 
   return (
     <button
-      title="Añadir tarea"
+      title="Información"
       className="OpenbuttonInfo"
       onClick={() => onClickButton()}
     >
