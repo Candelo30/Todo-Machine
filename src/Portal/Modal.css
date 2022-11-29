@@ -49,18 +49,6 @@
   font-size: 2em;
 }
 
-.Social {
-  z-index: 1;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  text-align: center;
-  font-size: 2em;
-  -webkit-transition: all ease-in 0.5s;
-  -o-transition: all ease-in 0.5s;
-  transition: all ease-in 0.5s;
-}
-
 .footer {
   margin-top: 32px;
   padding: 32px;
@@ -78,19 +66,6 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.Social-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }
 
 .fa-brands {
