@@ -52,7 +52,7 @@ function Modalinfo() {
               </li>
               <li>
                 <a href="https://t.me/Candelo_30" target="_blank">
-                  <FaTelegram className="fa-brands fa-telegram" />
+                  <FaTelegram className="fa-brands fa-telegram" style={bgcolor}/>
                 </a>
               </li>
               <li>
@@ -60,7 +60,7 @@ function Modalinfo() {
                   href="https://discord.com/channels/@me/933515593863295067"
                   target="_blank"
                 >
-                  <FaDiscord className="fa-brands fa-discord" />
+                  <FaDiscord className="fa-brands fa-discord" style={bgcolor}/>
                 </a>
               </li>
               <li>
