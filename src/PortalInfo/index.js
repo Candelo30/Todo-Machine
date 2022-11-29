@@ -17,7 +17,7 @@ import { TodoContext } from '../components/TodoContext';
 function Modalinfo() {
   const { color } = React.useContext(TodoContext);
   const bgcolor = {
-    color: color,
+    color: 'currentColor',
   };
 
   // ReactDom tiene este método para crear portales
