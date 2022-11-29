@@ -24,8 +24,6 @@ function Modalinfo() {
           opción de poder filtras tus pendientes. Así que te invito a probar
           esta app.
         </p>
-      </div>
-      <div>
         <footer className="footer">
           <h3>Luis Candelo</h3>
           <h4>Frontent Developer</h4>
