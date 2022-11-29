@@ -12,6 +12,12 @@ import {
   FaGithub,
 } from 'react-icons/fa';
 
+const color {
+  const border = {
+    color: color,
+  };
+}
+
 import { TodoContext } from '../components/TodoContext';
 
 function Modalinfo() {
@@ -40,7 +46,7 @@ function Modalinfo() {
                   href="https://www.linkedin.com/in/luis-eduardo-c-6015131ab/"
                   target="_blank"
                 >
-                  <FaLinkedin className="fa-brands fa-linkedin" />
+                  <FaLinkedin className="fa-brands fa-linkedin" style={color}/>
                 </a>
               </li>
               <li>
