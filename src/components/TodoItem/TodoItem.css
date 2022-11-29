@@ -158,8 +158,8 @@ body.dark .form-item {
 
 .text-edit {
   position: absolute;
-  top: 5;
-  left: 5px;
+  top: 2.5px;
+  right: 15px;
   font-size: smaller;
   font-weight: 200;
 }
