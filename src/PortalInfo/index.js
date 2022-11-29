@@ -1,6 +1,16 @@
 import React from 'react';
 // Necesitamos ReactDOM para renderizar nuestro modal en el DOM
 import ReactDOM from 'react-dom';
+import React from 'react';
+import {
+  FaLinkedin,
+  FaTelegram,
+  FaDiscord,
+  FaFacebook,
+  FaWhatsapp,
+  FaInstagram,
+  FaGithub,
+} from 'react-icons/fa';
 
 function Modalinfo() {
   // ReactDom tiene este método para crear portales
@@ -15,6 +25,7 @@ function Modalinfo() {
           esta app.
         </p>
       </div>
+      <div></div>
     </div>,
     document.getElementById('modalinfo')
   );
