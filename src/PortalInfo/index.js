@@ -12,7 +12,10 @@ import {
   FaGithub,
 } from 'react-icons/fa';
 
+import { TodoContext } from '../components/TodoContext';
+
 function Modalinfo() {
+  const { color } = React.useContext(TodoContext);
   // ReactDom tiene este método para crear portales
   return ReactDOM.createPortal(
     <div className="ModalBackground">
