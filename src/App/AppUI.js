@@ -12,6 +12,7 @@ import { Tick } from '../components/timeShow/';
 import { Illustrations } from '../components/illustrations/illustrations.js';
 import { Modal } from '../Portal/';
 import { Modalcolor } from '../Portalcolor/';
+import { Modalinfo } from '../PortalInfo/';
 import { TodoForm } from '../components/TodoForm/';
 import { GithubPicker } from 'react-color';
 
@@ -104,6 +105,10 @@ function AppUI() {
         <Modal>
           <TodoForm />
         </Modal>
+      )}
+      {!!openModalinfo && (
+        <Modalinfo />
+          
       )}
       {!!OpenModalcolor && (
         <Modalcolor>
