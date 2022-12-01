@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocalstorage } from './useLocalstorage';
 import Swal from 'sweetalert2';
 
+
 const TodoContext = React.createContext(); // CreateContext es una herramienta de React que nos dara los Provaider y Consumer para compartir el estado con todos los componentes.
 
 // Para compartir el estado de Provaider a Consumer creamos un puente
