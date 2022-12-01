@@ -67,65 +67,56 @@ function TodoProvider(props) {
 
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
-    const msgcompleted = confirm(
-      'Pulsa canselar para descompletar\n o Pulsa Aceptar para completar la tarea ' +
-        text
-    );
     const NewTodos = [...todos];
 
-    if (msgcompleted) {
-      alert('¡Gracias por confirmar!');
-      NewTodos[TodoIndex].completed = true;
-    } else {
-      alert('¡Haz denegado el mensaje!');
-      NewTodos[TodoIndex].completed = false;
-    }
+    Swal.fire({
+      title: 'Advertencia',
+      text: `Estas seguro que deseas completar ${text}`,
+      icon: 'warning',
+      showDenyButton: true,
+      confirmButtonText: 'Completar',
+      confirmButtonColor: `${color}`,
+      denyButtonText: 'Descompletar',
+    }).then((response) => {
+      if (response.isConfirmed) {
+        Swal.fire('Exito', `Tu tarea ${text} a sido completada`, 'success');
+        NewTodos[TodoIndex].completed = true;
+      } else if (response.isDenied) {
+        Swal.fire(
+          'Información',
+          `Tu tarea ${text} a sido Descompletada`,
+          'info'
+        );
+        NewTodos[TodoIndex].completed = false;
+      } else {
+        Swal.fire('Upss', 'Ha ocurrido un error', 'error');
+      }
+    });
     saveTodos(NewTodos);
   };
 
   const DelatedTodo = (text) => {
-    const NewTodos = [...todos];
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger',
-      },
-      buttonsStyling: false,
+    const NewTodos = [...todos];
+    Swal.fire({
+      title: 'Advertencia',
+      text: `Estas seguro que quieres eliminar ${text}`,
+      icon: 'warning',
+      showDenyButton: true,
+      confirmButtonText: 'Eliminar',
+      confirmButtonColor: `${color}`,
+      denyButtonText: 'Cancelar',
+    }).then((response) => {
+      if (response.isConfirmed) {
+        Swal.fire('Exito', `Tu tarea ${text} a sido eliminada`, 'success');
+        NewTodos.splice(TodoIndex, 1);
+      } else if (response.isDenied) {
+        Swal.fire('Información', 'Has denegado esta acción', 'info');
+        NewTodos[TodoIndex];
+      } else {
+        Swal.fire('Upss', 'Ha ocurrido un error', 'error');
+      }
     });
-
-    swalWithBootstrapButtons
-      .fire({
-        title: 'Eliminar',
-        text: `Deseas eliminar ${text}`,
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Eliminar',
-        cancelButtonText: 'cancelar!',
-        reverseButtons: true,
-      })
-      .then((result) => {
-        if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-          );
-          NewTodos.splice(TodoIndex, 1);
-        } else {
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel;
-          {
-            swalWithBootstrapButtons.fire(
-              'Cancelled',
-              'Your imaginary file is safe :)',
-              'error'
-            );
-          }
-          NewTodos[TodoIndex];
-        }
-      });
-
     saveTodos(NewTodos);
   };
   return (
