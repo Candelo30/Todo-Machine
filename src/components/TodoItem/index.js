@@ -56,7 +56,7 @@ function TodoItem(props) {
           Tarea no completada
         </i>
       )}
-      {props.completed ? (
+      {props.textEdit ? (
         <i style={border} className="text-edit">
           editado
         </i>
