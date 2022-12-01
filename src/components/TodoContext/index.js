@@ -46,7 +46,7 @@ function TodoProvider(props) {
   const UpdateaddTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const NewTodos = [...todos];
-    if (!!newTodo && !!text) {
+    if (newTodo === text) {
       alert('Este tarea ya existe');
     } else {
       NewTodos[TodoIndex].text = newTodo;
