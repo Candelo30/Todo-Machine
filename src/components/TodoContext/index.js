@@ -37,8 +37,8 @@ function TodoProvider(props) {
     if (newTodoValue === text) {
       alert('Este tarea ya existe');
     } else {
-      const newTodos = [...todos];
-      newTodos.push({
+      const NewTodos = [...todos];
+      NewTodos.push({
         text,
         completed: false,
         textEdit: false,
