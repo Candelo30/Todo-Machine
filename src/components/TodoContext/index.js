@@ -1,6 +1,8 @@
 import React from 'react';
 import { useLocalstorage } from './useLocalstorage';
 import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 
 
 const TodoContext = React.createContext(); // CreateContext es una herramienta de React que nos dara los Provaider y Consumer para compartir el estado con todos los componentes.
@@ -40,6 +42,7 @@ function TodoProvider(props) {
   // Función para añadir un nuevo TODO
   const addTodo = (text) => {
     try {
+      
       const NewTodos = [...todos];
       NewTodos.push({
         text,
