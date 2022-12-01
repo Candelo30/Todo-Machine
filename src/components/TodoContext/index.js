@@ -34,16 +34,12 @@ function TodoProvider(props) {
   // Función para añadir un nuevo TODO
   const addTodo = (text) => {
     const newTodos = [...todos];
-    if(!!text){
-      alert('Este tarea ya existe');
-    }else {
-      newTodos.push({
-        text,
-        completed: false,
-        textEdit: false,
-      });
-      saveTodos(newTodos);I
-    }
+    newTodos.push({
+      text,
+      completed: false,
+      textEdit: false,
+    });
+    saveTodos(newTodos);
   };
 
   // Función para añadir un nuevo TODO
