@@ -17,8 +17,8 @@ function TodoProvider(props) {
   const countsTodos = todos.length;
 
   const [searchValue, setSearchValue] = React.useState('');
-  const [newTodo, setNewTodoValues] = React.useState('');
-  const [newTodoValue, setNewTodoValue] = React.useState('');
+  const [newTodo, setNewTodoValue] = React.useState('');
+  const [newTodoValue, setNewTodoValues] = React.useState('');
 
   let searchedTodos = [];
 
