@@ -107,9 +107,9 @@ function TodoProvider(props) {
       .then((result) => {
         if (result.isConfirmed) {
           swalWithBootstrapButtons.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
+            'Cancelled',
+            'Your imaginary file is safe :)',
+            'error'
           );
           NewTodos.splice(TodoIndex, 1);
         } else if (
@@ -117,9 +117,9 @@ function TodoProvider(props) {
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(
-            'Cancelled',
-            'Your imaginary file is safe :)',
-            'error'
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
           );
 
           NewTodos[TodoIndex];
