@@ -43,7 +43,7 @@ function TodoProvider(props) {
         completed: false,
         textEdit: false,
       });
-      saveTodos(newTodos);
+      saveTodos(NewTodos);
     }
   };
 
