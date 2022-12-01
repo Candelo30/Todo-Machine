@@ -9,7 +9,10 @@ function TodoProvider(props) {
   const [openModal, setOpenModal] = React.useState(false);
   const [openModalinfo, setOpenModalinfo] = React.useState(false);
   const [OpenModalcolor, setOpenModalcolor] = React.useState(false);
-  const { todos, saveTodos, loading, error } = useLocalstorage('TODO_V1', []);
+  const { todos, saveTodos, loading, error, setError } = useLocalstorage(
+    'TODO_V1',
+    []
+  );
 
   const [color, setcolor] = React.useState('#0d47a1');
 
@@ -44,6 +47,7 @@ function TodoProvider(props) {
       saveTodos(NewTodos);
     } catch {
       alert('Este tarea ya existe');
+      setError(true);
     }
   };
 

@@ -35,7 +35,7 @@ function useLocalstorage(itemName, itemvalue) {
   };
 
 
-  return { todos, saveTodos, loading, error};
+  return { todos, saveTodos, loading, error, setError};
 }
 
 export { useLocalstorage };
