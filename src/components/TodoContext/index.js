@@ -51,12 +51,12 @@ function TodoProvider(props) {
   const UpdateaddTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const NewTodos = [...todos];
-    if (newTodo === text) {
-      alert('Este tarea ya existe');
-    } else {
+    try {
       NewTodos[TodoIndex].text = newTodo;
       NewTodos[TodoIndex].textEdit = true;
       saveTodos(NewTodos);
+    } catch {
+      alert('Este tarea ya existe');
     }
   };
 
