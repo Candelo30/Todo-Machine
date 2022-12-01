@@ -17,7 +17,8 @@ function TodoProvider(props) {
   const countsTodos = todos.length;
 
   const [searchValue, setSearchValue] = React.useState('');
-  const [newTodo, setNewTodoValue] = React.useState('');
+  const [newTodo, setNewTodoValues] = React.useState('');
+  const [newTodoValue, setNewTodoValue] = React.useState('');
 
   let searchedTodos = [];
 
@@ -111,6 +112,8 @@ function TodoProvider(props) {
         openModalinfo,
         setOpenModalinfo,
         setcolor,
+        newTodoValue,
+        setNewTodoValues,
       }}
     >
       {props.children}

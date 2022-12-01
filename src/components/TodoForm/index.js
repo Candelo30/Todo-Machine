@@ -4,13 +4,13 @@ import './TodoForm.css';
 
 function TodoForm() {
   // Creamos un estado para nuestro nuevo TODO
-  const [newTodoValue, setNewTodoValue] = React.useState('');
   // Desestructuramos las funciones que necesitamos para añadir un TODO y cerrar nuestro modal
-  const { addTodo, setOpenModal, color } = React.useContext(TodoContext);
+  const { newTodoValue, setNewTodoValues, addTodo, setOpenModal, color } =
+    React.useContext(TodoContext);
 
   // Creamos una función para actualizar el estado de nuestro nuevo TODO
   const onChange = (event) => {
-    setNewTodoValue(event.target.value);
+    setNewTodoValues(event.target.value);
   };
 
   // Función para cerrar el modal
@@ -27,7 +27,7 @@ function TodoForm() {
     // Cerramos nustro modal
     setOpenModal(false);
     // También estaría bien resetear nuestro formulario
-    setNewTodoValue('');
+    setNewTodoValues('');
   };
 
   const Appstyle = {
@@ -41,8 +41,8 @@ function TodoForm() {
 
   const AppstyleSecondary = {
     backgroundColor: color,
-    transition: "background-color 0.5s ease-in",
-    opacity: .3,
+    transition: 'background-color 0.5s ease-in',
+    opacity: 0.3,
   };
 
   return (
