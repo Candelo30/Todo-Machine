@@ -34,21 +34,29 @@ function TodoProvider(props) {
   // Función para añadir un nuevo TODO
   const addTodo = (text) => {
     const newTodos = [...todos];
-    newTodos.push({
-      text,
-      completed: false,
-      textEdit: false,
-    });
-    saveTodos(newTodos);
+    if (text === text) {
+      alert('Este tarea ya existe');
+    } else {
+      newTodos.push({
+        text,
+        completed: false,
+        textEdit: false,
+      });
+      saveTodos(newTodos);
+    }
   };
 
   // Función para añadir un nuevo TODO
   const UpdateaddTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const NewTodos = [...todos];
-    NewTodos[TodoIndex].text = newTodo;
-    NewTodos[TodoIndex].textEdit = true;
-    saveTodos(NewTodos);
+    if (text === newTodo && text === text) {
+      alert('Este tarea ya existe');
+    } else {
+      NewTodos[TodoIndex].text = newTodo;
+      NewTodos[TodoIndex].textEdit = true;
+      saveTodos(NewTodos);
+    }
   };
 
   const CompletedTodo = (text) => {
