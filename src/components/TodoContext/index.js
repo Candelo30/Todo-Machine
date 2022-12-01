@@ -100,28 +100,28 @@ function TodoProvider(props) {
         text: `Deseas eliminar ${text}`,
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'No, cancel',
-        cancelButtonText: 'Eliminar',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'cancelar!',
         reverseButtons: true,
       })
       .then((result) => {
         if (result.isConfirmed) {
           swalWithBootstrapButtons.fire(
-            'Cancelled',
-            'Your imaginary file is safe :)',
-            'error'
-          );
-          NewTodos.splice(TodoIndex, 1);
-        } else if (
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
-          swalWithBootstrapButtons.fire(
             'Deleted!',
             'Your file has been deleted.',
             'success'
           );
-
+          NewTodos.splice(TodoIndex, 1);
+        } else {
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel;
+          {
+            swalWithBootstrapButtons.fire(
+              'Cancelled',
+              'Your imaginary file is safe :)',
+              'error'
+            );
+          }
           NewTodos[TodoIndex];
         }
       });
