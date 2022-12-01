@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocalstorage } from './useLocalstorage';
+import Swal from 'sweetalert2';
 
 const TodoContext = React.createContext(); // CreateContext es una herramienta de React que nos dara los Provaider y Consumer para compartir el estado con todos los componentes.
 
@@ -60,7 +61,7 @@ function TodoProvider(props) {
       NewTodos[TodoIndex].textEdit = true;
       saveTodos(NewTodos);
     } catch {
-      alert('Este tarea ya existe');
+      Swal.fire('Esta tarea ya existe');
     }
   };
 
@@ -83,17 +84,48 @@ function TodoProvider(props) {
   };
 
   const DelatedTodo = (text) => {
-    const TodoIndex = todos.findIndex((todo) => todo.text === text);
-    const msgdelate = confirm('¿Deseas eliminar ' + text + '?');
     const NewTodos = [...todos];
+    const TodoIndex = todos.findIndex((todo) => todo.text === text);
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger',
+      },
+      buttonsStyling: false,
+    });
 
-    if (msgdelate) {
-      alert('¡Gracias por confirmar!');
-      NewTodos.splice(TodoIndex, 1);
-    } else {
-      alert('¡Haz denegado el mensaje!');
-      NewTodos[TodoIndex];
-    }
+    swalWithBootstrapButtons
+      .fire({
+        title: 'Eliminar',
+        text: `Deseas eliminar ${text}`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'No, cancel',
+        cancelButtonText: 'Eliminar',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          );
+          NewTodos.splice(TodoIndex, 1);
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Cancelled',
+            'Your imaginary file is safe :)',
+            'error'
+          );
+
+          NewTodos[TodoIndex];
+        }
+      });
+
     saveTodos(NewTodos);
   };
   return (
