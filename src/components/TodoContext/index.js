@@ -47,7 +47,6 @@ function TodoProvider(props) {
         textEdit: false,
       });
       saveTodos(NewTodos);
-      throw console.error('¡No repitas las tareas!');
     } catch {
       Swal.fire('Upps', 'Esta tarea ya existe', 'error');
       setError(true);
