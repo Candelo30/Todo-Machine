@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocalstorage } from './useLocalstorage';
 import Swal from 'sweetalert2';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 
 
