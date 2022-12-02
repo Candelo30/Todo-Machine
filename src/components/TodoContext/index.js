@@ -40,8 +40,8 @@ function TodoProvider(props) {
 
   const addTodo = (text) => {
     try {
-      if (!todos.text.includes(newTodoValue)) {
-        throw Swal.fire.error(
+      if (todos.text.includes(newTodoValue)) {
+        Swal.fire(
           'Error al actualizar esta tarea por favor recarga la aplicación'
         );
       } else {
