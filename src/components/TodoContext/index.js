@@ -39,20 +39,14 @@ function TodoProvider(props) {
   // Añadir
 
   const addTodo = (text) => {
-    const NewTodos = [...todos];
     try {
-      if (todos.text.includes(newTodoValue)) {
-        NewTodos.push({
-          text,
-          completed: false,
-          textEdit: false,
-        });
-        saveTodos(NewTodos);
-      } else {
-        Swal.fire(
-          'Error al actualizar esta tarea por favor recarga la aplicación'
-        );
-      }
+      const NewTodos = [...todos];
+      NewTodos.push({
+        text,
+        completed: false,
+        textEdit: false,
+      });
+      saveTodos(NewTodos);
     } catch {
       Swal.fire('Upps', 'Esta tarea ya existe', 'error');
       setError(true);
