@@ -59,7 +59,7 @@ function TodoProvider(props) {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const NewTodos = [...todos];
     try {
-      if (newTodo === todos.includes(NewTodos).text) {
+      if (newTodo === text) {
         Swal.fire('Upps', 'Esta tarea ya existe', 'error');
       } else {
         NewTodos[TodoIndex].text = newTodo;
