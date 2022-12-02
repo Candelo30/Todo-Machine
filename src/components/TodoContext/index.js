@@ -2,8 +2,6 @@ import React from 'react';
 import { useLocalstorage } from './useLocalstorage';
 import Swal from 'sweetalert2';
 
-
-
 const TodoContext = React.createContext(); // CreateContext es una herramienta de React que nos dara los Provaider y Consumer para compartir el estado con todos los componentes.
 
 // Para compartir el estado de Provaider a Consumer creamos un puente
@@ -38,10 +36,10 @@ function TodoProvider(props) {
     });
   }
 
-  // Función para añadir un nuevo TODO
+  // Añadir
+
   const addTodo = (text) => {
     try {
-      
       const NewTodos = [...todos];
       NewTodos.push({
         text,
@@ -50,23 +48,32 @@ function TodoProvider(props) {
       });
       saveTodos(NewTodos);
     } catch {
-      alert('Este tarea ya existe');
+      Swal.fire('Upps', 'Esta tarea ya existe', 'error');
       setError(true);
     }
   };
 
-  // Función para añadir un nuevo TODO
+  // Actualizar
+
   const UpdateaddTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const NewTodos = [...todos];
-    if (newTodo === text) {
-      Swal.fire('Upps', 'Esta tarea ya existe', 'error');
-    } else {
-      NewTodos[TodoIndex].text = newTodo;
-      NewTodos[TodoIndex].textEdit = true;
-      saveTodos(NewTodos);
+
+    try {
+      if (!!todos.indexOf()) {
+        NewTodos[TodoIndex].text = newTodo;
+        NewTodos[TodoIndex].textEdit = true;
+        saveTodos(NewTodos);
+      } else {
+        Swal.fire('Upps', 'Esta tarea ya existe', 'error');
+      }
+    } catch {
+      Swal.fire('Upps', '¡Ah habiado un error!', 'error');
+      setError(true);
     }
   };
+
+  // Completar
 
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
@@ -97,6 +104,8 @@ function TodoProvider(props) {
     });
     saveTodos(NewTodos);
   };
+
+  // Eliminar
 
   const DelatedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
