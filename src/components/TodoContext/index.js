@@ -40,13 +40,19 @@ function TodoProvider(props) {
 
   const addTodo = (text) => {
     try {
-      const NewTodos = [...todos];
-      NewTodos.push({
-        text,
-        completed: false,
-        textEdit: false,
-      });
-      saveTodos(NewTodos);
+      if (todos.text.includes(newTodoValue)) {
+        throw Swal.fire.error(
+          'Error al actualizar esta tarea por favor recarga la aplicación'
+        );
+      } else {
+        const NewTodos = [...todos];
+        NewTodos.push({
+          text,
+          completed: false,
+          textEdit: false,
+        });
+        saveTodos(NewTodos);
+      }
     } catch {
       Swal.fire('Upps', 'Esta tarea ya existe', 'error');
       setError(true);
@@ -60,7 +66,9 @@ function TodoProvider(props) {
     const NewTodos = [...todos];
     try {
       if (newTodo === text) {
-        Swal.fire('Upps', 'Esta tarea ya existe', 'error');
+        throw Swal.fire.error(
+          'Error al actualizar esta tarea por favor recarga la aplicación'
+        );
       } else {
         NewTodos[TodoIndex].text = newTodo;
         NewTodos[TodoIndex].textEdit = true;
@@ -69,6 +77,7 @@ function TodoProvider(props) {
     } catch {
       Swal.fire('Upps', '¡Ah habiado un error!', 'error');
       setError(true);
+      location.reload();
     }
   };
 
@@ -130,7 +139,7 @@ function TodoProvider(props) {
         }
       });
       saveTodos(NewTodos);
-    }catch {
+    } catch {
       Swal.fire('Upss', 'Vuelve a intentarlo', 'error');
     }
   };
