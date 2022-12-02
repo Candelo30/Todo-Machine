@@ -56,6 +56,7 @@ function TodoProvider(props) {
     } catch {
       Swal.fire('Upps', 'Esta tarea ya existe', 'error');
       setError(true);
+      location.reload();
     }
   };
 
