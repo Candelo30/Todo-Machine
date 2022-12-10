@@ -128,7 +128,6 @@ function TodoProvider(props) {
           NewTodos.splice(TodoIndex, 1);
         } else if (response.isDenied) {
           Swal.fire('Información', 'Has denegado esta acción', 'info');
-          NewTodos[TodoIndex];
         } else {
           Swal.fire('Upss', 'Ha ocurrido un error', 'error');
         }
