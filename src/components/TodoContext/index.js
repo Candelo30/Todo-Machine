@@ -113,29 +113,26 @@ function TodoProvider(props) {
   const DelatedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const NewTodos = [...todos];
-    try {
-      Swal.fire({
-        title: 'Advertencia',
-        text: `Estas seguro que quieres eliminar ${text}`,
-        icon: 'warning',
-        showDenyButton: true,
-        confirmButtonText: 'Eliminar',
-        confirmButtonColor: `${color}`,
-        denyButtonText: 'Cancelar',
-      }).then((response) => {
-        if (response.isConfirmed) {
-          Swal.fire('Exito', `Tu tarea ${text} a sido eliminada`, 'success');
-          NewTodos.splice(TodoIndex, 1);
-        } else if (response.isDenied) {
-          Swal.fire('Información', 'Has denegado esta acción', 'info');
-        } else {
-          Swal.fire('Upss', 'Ha ocurrido un error', 'error');
-        }
-      });
-      saveTodos(NewTodos);
-    } catch {
-      Swal.fire('Upss', 'Vuelve a intentarlo', 'error');
-    }
+
+    Swal.fire({
+      title: 'Advertencia',
+      text: `Estas seguro que quieres eliminar ${text}`,
+      icon: 'warning',
+      showDenyButton: true,
+      confirmButtonText: 'Eliminar',
+      confirmButtonColor: `${color}`,
+      denyButtonText: 'Cancelar',
+    }).then((response) => {
+      if (response.isConfirmed) {
+        Swal.fire('Exito', `Tu tarea ${text} a sido eliminada`, 'success');
+        NewTodos.splice(TodoIndex, 1);
+      } else if (response.isDenied) {
+        Swal.fire('Información', 'Has denegado esta acción', 'info');
+      } else {
+        Swal.fire('Upss', 'Ha ocurrido un error', 'error');
+      }
+    });
+    saveTodos(NewTodos);
   };
   return (
     <TodoContext.Provider
