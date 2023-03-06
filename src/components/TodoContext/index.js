@@ -81,30 +81,15 @@ function TodoProvider(props) {
   const CompletedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const NewTodos = [...todos];
+    let opcion = confirm("Deseas completar esta tarea");
 
-    Swal.fire({
-      title: 'Advertencia',
-      text: `Estas seguro que deseas completar ${text}`,
-      icon: 'warning',
-      showDenyButton: true,
-      confirmButtonText: 'Completar',
-      confirmButtonColor: `${color}`,
-      denyButtonText: 'Descompletar',
-    }).then((response) => {
-      if (response.isConfirmed) {
-        Swal.fire('Exito', `Tu tarea ${text} a sido completada`, 'success');
+    
+    if (opcion == true) {
+      alert("Tu tarea fue completada")
         NewTodos[TodoIndex].completed = true;
-      } else if (response.isDenied) {
-        Swal.fire(
-          'Información',
-          `Tu tarea ${text} a sido Descompletada`,
-          'info'
-        );
-        NewTodos[TodoIndex].completed = false;
       } else {
-        Swal.fire('Upss', 'Ha ocurrido un error', 'error');
-      }
-    });
+        NewTodos[TodoIndex].completed = false;
+      };
     saveTodos(NewTodos);
   };
 
@@ -113,25 +98,16 @@ function TodoProvider(props) {
   const DelatedTodo = (text) => {
     const TodoIndex = todos.findIndex((todo) => todo.text === text);
     const NewTodos = [...todos];
+    let opcion = confirm("Deseas eliminar esta tarea");
 
-    Swal.fire({
-      title: 'Advertencia',
-      text: `Estas seguro que quieres eliminar ${text}`,
-      icon: 'warning',
-      showDenyButton: true,
-      confirmButtonText: 'Eliminar',
-      confirmButtonColor: `${color}`,
-      denyButtonText: 'Cancelar',
-    }).then((response) => {
-      if (response.isConfirmed) {
-        Swal.fire('Exito', `Tu tarea ${text} a sido eliminada`, 'success');
+    
+    if (opcion == true) {
+      alert("Tu tarea fue eliminada")
         NewTodos.splice(TodoIndex, 1);
-      } else if (response.isDenied) {
-        Swal.fire('Información', 'Has denegado esta acción', 'info');
+     
       } else {
-        Swal.fire('Upss', 'Ha ocurrido un error', 'error');
+        alert("Acción denegada")
       }
-    });
     saveTodos(NewTodos);
   };
   return (
